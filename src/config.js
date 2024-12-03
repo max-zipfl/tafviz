@@ -1,6 +1,6 @@
 const TAF_CONFIG = {
-    x: 'lon',
-    y: 'lat',
+    x: 'x',
+    y: 'y',
     w: 'width',
     l: 'length',
     yaw: 'psi_rad',

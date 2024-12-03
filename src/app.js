@@ -6,6 +6,7 @@ import { crs, props } from "./config.js"
 
 const csvInputEl = document.getElementById('data-csv-input')
 const mapInputEl = document.getElementById('data-geojson-input')
+const originInputEl = document.getElementById('origin-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const canvas = document.getElementById('stream')
@@ -18,21 +19,34 @@ let running = false
 // Data handling
 
 /**
+ * Read scenario origin point in lat / lon coordinates
+ * @returns 
+ */
+function readOrigin() {
+    return originInputEl.value.split(',').map(s => s.trim()).map(parseFloat)
+}
+
+/**
  * Read and parse a CSV file from a browser's FileReader
+ * @param {array} ref GNSS reference / scenario origin point in 2D (optional, omit for local coordinates)
  * @returns Array of objects
  */
-async function readCsv() {
+async function readCsv(ref) {
     const input = csvInputEl.files[0]
     const reader = new FileReader()
+
+    ref = ref ? reproject([ref.reverse()])[0] : ref
 
     return new Promise((resolve, reject) => {
         reader.onload = (e) => {
             const data = d3.csvParse(e.target.result, d3.autoType)
-            data.forEach(d => {
-                const xy = reproject([[d[props.x], d[props.y]]], crs, 'EPSG:3857')[0]  // assumes source coordinates to be lat lon
-                d[props.x] = xy[0]
-                d[props.y] = xy[1]
-            })
+
+            if (ref) {
+                data.forEach(d => {
+                    d[props.x] = d[props.x] + ref[0]
+                    d[props.y] = d[props.y] + ref[1]
+                })
+            }
             resolve(data)
         }
         reader.readAsText(input)
@@ -96,8 +110,9 @@ async function run(e) {
     e.preventDefault()
 
     if (running) return
-    
+
     let map
+    let ref
     let data
     let dataGrouped
 
@@ -105,10 +120,19 @@ async function run(e) {
         console.log('reading map data')
         map = await readGeoJSON()
     } catch (e) { }
-    
+
+    try {
+        if (map) {
+            ref = readOrigin()
+            ref[0]
+        }
+    } catch (e) {
+        alert('Failed to parse origin point. You need to specify one when wanting to visualize on a map.')
+    }
+
     try {
         console.log('reading csv')
-        data = await readCsv()
+        data = await readCsv(ref)  // local or global coordinates depending on whether map is used
         dataGrouped = groupByFrames(data)
     } catch (e) {
         alert('Failed to read scenario CSV data')

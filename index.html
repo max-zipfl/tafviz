@@ -41,7 +41,7 @@
 
     #controls label {
       display: inline-block;
-      min-width: 150px;
+      min-width: 170px;
       margin: 8px 0;
     }
 
@@ -85,12 +85,18 @@
       <form onsubmit="taf.run(event)">
         <div>
           <label for="data-csv-input">Scenario CSV:</label>
-          <input type="file" id="data-csv-input" accept=".csv" />
+          <input type="file" id="data-csv-input" accept=".csv" required/>
         </div>
 
         <div>
           <label for="data-geojson-input">Map GeoJSON:</label>
           <input type="file" id="data-geojson-input" accept=".geojson" />
+        </div>
+
+        <div>
+          <label for="origin-input">Origin (WGS84 Lat/Lon):</label>
+          <input type="text" id="origin-input" placeholder="49.01160993928, 8.43856470258" pattern="\d+\.\d+,\s?\d+\.\d+"/>
+          <small>(optional without map)</small>
         </div>
 
         <div class="input-group">
