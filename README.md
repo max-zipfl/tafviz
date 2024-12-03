@@ -1,6 +1,8 @@
 # 🚙 tafviz
 
-Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written by hand. Work in progress.
+Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written [by hand](https://muetsch.io/statement-about-generative-ai.html). Work in progress.
+
+**Current limitation:** Only works with "extended" TAF format used internally in my research. Standard TAF format only specified scene-local coordinates, while world coordinates (lat / lon) are currently required for visualization. An according projection mechanism, given a reference point / global scenario origin, is currently in progress. Stay tuned.
 
 <img src="assets/screenshot.png" width="600px">
 
@@ -31,7 +33,7 @@ OSM_USE_CUSTOM_INDEXING=NO ogr2ogr -f GeoJSON k729.geojson k729.osm lines
 For proper visualization, metric coordinates (no lat / lon) are used internally. Thus, input lat / lon coordinates (by default, WGS84 is assumed) are automatically converted to web mercator projection.
 
 ## Example Data
-* **Scenario:** [`vehicle_tracks_000.csv`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/recorded_trackfiles/k729_2022-03-16/vehicle_tracks_000.csv)
+* **Scenario:** [`vehicle_tracks_000.csv`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/recorded_trackfiles/k729_2022-03-16/vehicle_tracks_000.csv) (must be converted to world coords)
 * **Map:** [`k729_2022-03-16.osm`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/maps/k729_2022-03-16.osm) (must be converted to GeoJSON)
 
 ## To Do
@@ -47,7 +49,7 @@ For proper visualization, metric coordinates (no lat / lon) are used internally.
 [screencast.webm](https://github.com/user-attachments/assets/cf6de57b-01fc-49cb-aa3b-cc9ed425d94c)
 
 ## Disclaimer
-This project is not affiliated by FZI Forschungszentrum Informatik Karlsruhe.
+This project is not affiliated with FZI Forschungszentrum Informatik Karlsruhe.
 
 ## License 
 GPL-3.0

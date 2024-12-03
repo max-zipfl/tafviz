@@ -5,6 +5,11 @@ const typeColors = {
 }
 
 export class Visualizer {
+    /**
+     * Class for drawing scenarios into a canvas
+     * @param {HTMLElement} canvas HTML canvas element
+     * @param {object} props Dict of CSV column names for required fields.
+     */
     constructor(canvas, props) {
         this.props = props
         this.canvas = canvas
@@ -15,15 +20,14 @@ export class Visualizer {
         this.min = [0, 0]
         this.max = [this.w, this.h]
 
-        // Initialization
         this.#initCanvas()
     }
 
+    /**
+     * Draw a single traffic scene defined.
+     * @param {array} data Array of objects with required keys: (frame_id, x, y, psi_rad, agent_type)
+     */
     drawFrame(data) {
-        /**
-         * Draw a single traffic scene defined.
-         * @param {array} data Array of objects with required keys: (frame_id, x, y, psi_rad, agent_type)
-         */
         this.clear()
 
         if (!data.length) return
@@ -46,21 +50,31 @@ export class Visualizer {
         lines.forEach(l => this.#drawLine(l))
     }
 
+    /**
+     * Set minimum and maximum data range found in the data. Required for projecting scenario coordinates to screen coordinates.
+     * @param {number} minX 
+     * @param {number} minY 
+     * @param {number} maxX 
+     * @param {number} maxY 
+     */
     setDataBounds(minX, minY, maxX, maxY) {
         this.min = [minX, minY]
         this.max = [maxX, maxY]
     }
 
-    clear() {
-        this.#initCanvas()
-    }
-
+    /**
+     * Resize the HTML canvas element to match the scenario's aspect ratio defined by @see setDataBounds.
+     */
     resizeFitData() {
         const dataRangeX = this.max[0] - this.min[0]
         const dataRangeY = this.max[1] - this.min[1]
         const aspectRatio = dataRangeX / dataRangeY
         this.canvas.width = this.h * aspectRatio
         this.w = this.canvas.width
+    }
+
+    clear() {
+        this.#initCanvas()
     }
 
     #drawLine(coords, color = '#ffffff') {
