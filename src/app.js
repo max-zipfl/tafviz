@@ -1,11 +1,11 @@
-import { csvParse, autoType } from "https://cdn.skypack.dev/d3-dsv@3"
 import { Visualizer } from "./visualization.js"
 import { getMinMax2D, sleep } from "./utils.js"
-import { props } from "./config.js"
+import { crs, props } from "./config.js"
 
 // HTML references
 
-const fileInputEl = document.getElementById('data-file-input')
+const csvInputEl = document.getElementById('data-csv-input')
+const mapInputEl = document.getElementById('data-geojson-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const canvas = document.getElementById('stream')
@@ -13,6 +13,7 @@ const canvas = document.getElementById('stream')
 // Global variables
 let speed = parseFloat(speedInputEl.value)
 let paused = false
+let running = false
 
 // Data handling
 
@@ -21,16 +22,51 @@ let paused = false
  * @returns Array of objects
  */
 async function readCsv() {
-    const input = fileInputEl.files[0]
+    const input = csvInputEl.files[0]
     const reader = new FileReader()
 
     return new Promise((resolve, reject) => {
         reader.onload = (e) => {
-            const data = csvParse(e.target.result, autoType)
+            const data = d3.csvParse(e.target.result, d3.autoType)
+            data.forEach(d => {
+                const xy = reproject([[d[props.x], d[props.y]]], crs, 'EPSG:3857')[0]  // assumes source coordinates to be lat lon
+                d[props.x] = xy[0]
+                d[props.y] = xy[1]
+            })
             resolve(data)
         }
         reader.readAsText(input)
     })
+}
+
+/**
+ * Reads a GeoJSON of polylines from a browser's FileReader and returns the raw lines
+ * @returns Array of polylines (defined by 2D points)
+ */
+async function readGeoJSON() {
+    const input = mapInputEl.files[0]
+    const reader = new FileReader()
+
+    return new Promise((resolve, reject) => {
+        reader.onload = (e) => {
+            let data = JSON.parse(e.target.result)
+            data = data.features.map(f => f.geometry.coordinates)  // lines
+            data = data.map(l => reproject(l, crs, 'EPSG:3857'))
+            resolve(data)
+        }
+        reader.readAsText(input)
+    })
+}
+
+/**
+ * Reprojects a list of coordinates into another CRS.
+ * @param {array} coords List of coordinates
+ * @param {string} crsSrc Source CRS
+ * @param {string} crsDst Target CRS
+ * @returns Projected coordinates
+ */
+function reproject(coords, crsSrc='EPSG:4326', crsDst='EPSG:3857') {
+    return coords.map(c => proj4(crsSrc, crsDst, c))
 }
 
 /**
@@ -58,13 +94,22 @@ const viz = new Visualizer(canvas, props)
 async function run(e) {
     e.preventDefault()
 
+    if (running) return
+    running = true
+
+    console.log('reading map data')
+    const map = await readGeoJSON()
+
     console.log('reading csv')
     const data = await readCsv()
     const dataGrouped = groupByFrames(data)
 
     console.log('processing csv')
-    const [minX, minY, maxX, maxY] = getMinMax2D(data, props.x, props.y)
-    viz.setDataBounds(minX * 1.5, minY * 1.1, maxX * 1.5, maxY * 1.1)
+    const [dataMinX, dataMinY, dataMaxX, dataMaxY] = getMinMax2D(data, props.x, props.y)
+    const [mapMinX, mapMinY, mapMaxX, mapMaxY] = getMinMax2D(map.flat(1), 0, 1)
+    const [minX, minY, maxX, maxY] = [Math.min(dataMinX, mapMinX), Math.min(dataMinY, mapMinY), Math.max(dataMaxX, mapMaxX), Math.max(dataMaxY, mapMaxY)]
+    viz.setDataBounds(minX, minY, maxX, maxY)
+    viz.resizeFitData()
 
     console.log('visualizing data')
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
@@ -83,6 +128,7 @@ async function run(e) {
         if (!dataGrouped[frameId].length) continue
 
         viz.drawFrame(dataGrouped[frameId])
+        viz.drawMap(map)
 
         if (nextFrameId) {
             const t0 = dataGrouped[frameId][0][props.ts]

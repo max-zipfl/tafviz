@@ -1,6 +1,6 @@
 const TAF_CONFIG = {
-    x: 'x',
-    y: 'y',
+    x: 'lon',
+    y: 'lat',
     w: 'width',
     l: 'length',
     yaw: 'psi_rad',
@@ -12,3 +12,5 @@ const TAF_CONFIG = {
 export const props = {
     ...TAF_CONFIG,
 }
+
+export const crs = 'EPSG:4326'

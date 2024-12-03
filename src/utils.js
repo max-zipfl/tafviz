@@ -4,7 +4,7 @@ export function getMinMax2D(data, keyX='x', keyY='y') {
     const minY = Math.min(...data.map(p => p[keyY]))
     const maxY = Math.max(...data.map(p => p[keyY]))
 
-    return [ minX, minY, maxY, maxY ]
+    return [ minX, minY, maxX, maxY ]
 }
 
 export function sleep(ms) {

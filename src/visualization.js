@@ -38,6 +38,14 @@ export class Visualizer {
         this.#drawFrameCount(frameId)
     }
 
+    /**
+     * Draws map contours given as polylines
+     * @param {array} lines 2D coordinates of polyline points
+     */
+    drawMap(lines) {
+        lines.forEach(l => this.#drawLine(l))
+    }
+
     setDataBounds(minX, minY, maxX, maxY) {
         this.min = [minX, minY]
         this.max = [maxX, maxY]
@@ -45,6 +53,27 @@ export class Visualizer {
 
     clear() {
         this.#initCanvas()
+    }
+
+    resizeFitData() {
+        const dataRangeX = this.max[0] - this.min[0]
+        const dataRangeY = this.max[1] - this.min[1]
+        const aspectRatio = dataRangeX / dataRangeY
+        this.canvas.width = this.h * aspectRatio
+        this.w = this.canvas.width
+    }
+
+    #drawLine(coords, color = '#ffffff') {
+        const ctx = this.ctx
+        coords = coords.map(p => this.#project(p))
+
+        ctx.strokeStyle = color + '66'
+        ctx.lineWidth = 1
+
+        ctx.beginPath()
+        ctx.moveTo(coords[0][0], coords[0][1])
+        coords.forEach(c => ctx.lineTo(c[0], c[1]))
+        ctx.stroke()
     }
 
     #drawBox(c, d, r, color = '#ff0000') {
@@ -91,7 +120,6 @@ export class Visualizer {
      * @returns Projected coordinates
      */
     #project(p) {
-
         let pp = [...p]
         pp = [
             ((pp[0] - this.min[0]) / (this.max[0] - this.min[0])) * (this.w - 0) + 0,

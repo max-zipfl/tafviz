@@ -3,54 +3,116 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TAF Scenario Visualization</title>
 
   <style>
-    canvas {
+    body {
+      font-family: monospace;
+    }
+
+    #container {
       position: fixed;
       top: 0;
       left: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
       background-color: #000;
     }
 
-    #main {
-      font-family: monospace;
+    canvas {
+      position: absolute;
+      background-color: #000;
+    }
+
+    #controls {
       position: absolute;
       top: 0;
       left: 0;
       z-index: 1;
+      border: 2px dashed #fff;
+      margin: 20px;
       color: #fff;
-      padding: 16px
+      padding: 16px;
+      max-width: 33vw;
+    }
+
+    #controls label {
+      display: inline-block;
+      min-width: 150px;
+      margin: 8px 0;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+    }
+
+    #main-controls {
+      display: flex;
+      justify-content: right;
+      gap: 8px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    a:link, a:visited {
+      color: #4FC3F7;
     }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <canvas id="stream" ref="stream-canvas" width="1440" height="900" class="rounded">
-      Canvas not available.
-    </canvas>
+    <div id="container">
+      <canvas id="stream" ref="stream-canvas" width="500" height="500" class="rounded">
+        Canvas not available.
+      </canvas>
+    </div>
 
-    <div id="main">
+    <div id="controls">
+      <div>
+        <h1 style="margin-top: 0">TAF Scenario Visualization</h1>
+        <p>
+          Play scenarios recorded in <a href="https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/" target="_blank">TAF</a> (or INTERACTION) format with minimum overhead and maximum flexibility. Scenario is just an obstacle list with 7 required fields, map is just a set of polylines.
+        </p>
+      </div>
+
       <form onsubmit="taf.run(event)">
-        <input type="file" id="data-file-input" accept=".csv" />
-        <input type="submit" value="Run" />
-        <input type="button" value="Play / Pause" onclick="taf.toggle()"/><br>
         <div>
-          <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider" onchange="taf.setSpeed(event)">
-          <small><span id="speed-label"></span></small>
+          <label for="data-csv-input">Scenario CSV:</label>
+          <input type="file" id="data-csv-input" accept=".csv" />
+        </div>
+
+        <div>
+          <label for="data-geojson-input">Map GeoJSON:</label>
+          <input type="file" id="data-geojson-input" accept=".geojson" />
+        </div>
+
+        <div class="input-group">
+          <label for="speed-slider">Playback Speed (<small id="speed-label"></small>x):</label>
+          <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider" onchange="taf.setSpeed(event)" style="margin-left: 8px;">
+        </div>
+
+        <div id="main-controls">
+          <input type="button" value="Play / Pause" onclick="taf.toggle()" />
+          <input type="submit" value="Run" />
+
         </div>
       </form>
     </div>
   </div>
   <script>
     const canvas = document.getElementById('stream')
-    canvas.width = window.innerWidth
     canvas.height = window.innerHeight
   </script>
-  <script type="module" src="./app.js"></script>
+  <script src="lib/d3.v7.min.js"></script>
+  <script src="lib/proj4.js"></script>
+  <script type="module" src="src/app.js"></script>
 </body>
 
 </html>
