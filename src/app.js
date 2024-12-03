@@ -65,7 +65,7 @@ async function readGeoJSON() {
  * @param {string} crsDst Target CRS
  * @returns Projected coordinates
  */
-function reproject(coords, crsSrc='EPSG:4326', crsDst='EPSG:3857') {
+function reproject(coords, crsSrc = 'EPSG:4326', crsDst = 'EPSG:3857') {
     return coords.map(c => proj4(crsSrc, crsDst, c))
 }
 
@@ -87,6 +87,7 @@ function groupByFrames(data) {
 }
 
 // Drawing
+
 const viz = new Visualizer(canvas, props)
 
 // UI binding
@@ -95,25 +96,37 @@ async function run(e) {
     e.preventDefault()
 
     if (running) return
-    running = true
+    
+    let map
+    let data
+    let dataGrouped
 
-    console.log('reading map data')
-    const map = await readGeoJSON()
-
-    console.log('reading csv')
-    const data = await readCsv()
-    const dataGrouped = groupByFrames(data)
+    try {
+        console.log('reading map data')
+        map = await readGeoJSON()
+    } catch (e) { }
+    
+    try {
+        console.log('reading csv')
+        data = await readCsv()
+        dataGrouped = groupByFrames(data)
+    } catch (e) {
+        alert('Failed to read scenario CSV data')
+        return
+    }
 
     console.log('processing csv')
     const [dataMinX, dataMinY, dataMaxX, dataMaxY] = getMinMax2D(data, props.x, props.y)
-    const [mapMinX, mapMinY, mapMaxX, mapMaxY] = getMinMax2D(map.flat(1), 0, 1)
+    const [mapMinX, mapMinY, mapMaxX, mapMaxY] = map ? getMinMax2D(map.flat(1), 0, 1) : [dataMinX, dataMinY, dataMaxX, dataMaxY]
     const [minX, minY, maxX, maxY] = [Math.min(dataMinX, mapMinX), Math.min(dataMinY, mapMinY), Math.max(dataMaxX, mapMaxX), Math.max(dataMaxY, mapMaxY)]
     viz.setDataBounds(minX, minY, maxX, maxY)
     viz.resizeFitData()
 
     console.log('visualizing data')
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
-    
+
+    running = true
+
     for (let i = 0; i < uniqueFrames.length; i++) {
         if (paused) {
             // poor-man's pause
@@ -123,12 +136,12 @@ async function run(e) {
         }
 
         const frameId = uniqueFrames[i]
-        const nextFrameId = i < uniqueFrames.length - 1 ? uniqueFrames[i+1] : null
+        const nextFrameId = i < uniqueFrames.length - 1 ? uniqueFrames[i + 1] : null
 
         if (!dataGrouped[frameId].length) continue
 
         viz.drawFrame(dataGrouped[frameId])
-        viz.drawMap(map)
+        if (map) viz.drawMap(map)
 
         if (nextFrameId) {
             const t0 = dataGrouped[frameId][0][props.ts]
