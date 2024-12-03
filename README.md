@@ -1,10 +1,8 @@
-# tafviz
+# 🚙 tafviz
 
-<video src="assets/screencast.webm" height="400px"></video>
+Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written by hand. Work in progress.
 
-Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written by hand.
-
-Work in progress.
+<img src="assets/screenshot.png" width="600px">
 
 ## Usage
 ```bash
@@ -44,6 +42,9 @@ For proper visualization, metric coordinates (no lat / lon) are used internally.
 * [ ] Zoom + Drag & Drop
 * [ ] OSM / Lanelet2 support
 * [ ] Support local coordinates
+
+## See it in action
+[screencast.webm](https://github.com/user-attachments/assets/cf6de57b-01fc-49cb-aa3b-cc9ed425d94c)
 
 ## Disclaimer
 This project is not affiliated by FZI Forschungszentrum Informatik Karlsruhe.
