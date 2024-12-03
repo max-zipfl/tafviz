@@ -6,7 +6,12 @@ import { props } from "./config.js"
 // HTML references
 
 const fileInputEl = document.getElementById('data-file-input')
+const speedInputEl = document.getElementById('speed-slider')
+const speedLabelEl = document.getElementById('speed-label')
 const canvas = document.getElementById('stream')
+
+// Global variables
+let speed = parseFloat(speedInputEl.value)
 
 // Data handling
 
@@ -35,12 +40,13 @@ async function readCsv() {
 function groupByFrames(data) {
     const dataGrouped = {}
     data.forEach(d => {
-        if (!dataGrouped[d[props.frameId]]) {
-            dataGrouped[d[props.frameId]] = []
+        const frameId = parseInt(d[props.frameId])
+        if (!dataGrouped[frameId]) {
+            dataGrouped[frameId] = []
         }
-        dataGrouped[d[props.frameId]].push(d)
+        dataGrouped[frameId].push(d)
     })
-    return dataGrouped    
+    return dataGrouped
 }
 
 // Drawing
@@ -60,17 +66,37 @@ async function run(e) {
     viz.setDataBounds(minX * 1.5, minY * 1.1, maxX * 1.5, maxY * 1.1)
 
     console.log('visualizing data')
-    const minFrame = Math.min(...data.map(d => d[props.frameId]))
-    const maxFrame = Math.max(...data.map(d => d[props.frameId]))
+    const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
+    
+    for (let i = 0; i < uniqueFrames.length; i++) {
+        const frameId = uniqueFrames[i]
+        const nextFrameId = i < uniqueFrames.length - 1 ? uniqueFrames[i+1] : null
 
-    for (let i = minFrame; i <= maxFrame; i++) {
-        viz.drawFrame(dataGrouped[i])
-        await sleep(100)
+        if (!dataGrouped[frameId].length) continue
+
+        viz.drawFrame(dataGrouped[frameId])
+
+        if (nextFrameId) {
+            const t0 = dataGrouped[frameId][0][props.ts]
+            const t1 = dataGrouped[nextFrameId].length ? dataGrouped[nextFrameId][0][props.ts] : 100
+
+            await sleep((t1 - t0) / speed)
+        }
     }
 }
+
+function setSpeed(e) {
+    speed = parseFloat(typeof e === 'number' ? e : e.target.value)
+    speedLabelEl.innerText = speed.toString()
+}
+
+// Initial stuff
+
+setSpeed(speed)
 
 // Exports
 
 window.taf = {
-    run
+    run,
+    setSpeed,
 }
