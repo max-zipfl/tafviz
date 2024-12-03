@@ -1,6 +1,7 @@
 import { csvParse, autoType } from "https://cdn.skypack.dev/d3-dsv@3"
 import { Visualizer } from "./visualization.js"
 import { getMinMax2D, sleep } from "./utils.js"
+import { props } from "./config.js"
 
 // HTML references
 
@@ -34,16 +35,16 @@ async function readCsv() {
 function groupByFrames(data) {
     const dataGrouped = {}
     data.forEach(d => {
-        if (!dataGrouped[d.frame_id]) {
-            dataGrouped[d.frame_id] = []
+        if (!dataGrouped[d[props.frameId]]) {
+            dataGrouped[d[props.frameId]] = []
         }
-        dataGrouped[d.frame_id].push(d)
+        dataGrouped[d[props.frameId]].push(d)
     })
     return dataGrouped    
 }
 
 // Drawing
-const viz = new Visualizer(canvas, true)
+const viz = new Visualizer(canvas, props)
 
 // UI binding
 
@@ -55,12 +56,12 @@ async function run(e) {
     const dataGrouped = groupByFrames(data)
 
     console.log('processing csv')
-    const [minX, minY, maxX, maxY] = getMinMax2D(data)
+    const [minX, minY, maxX, maxY] = getMinMax2D(data, props.x, props.y)
     viz.setDataBounds(minX * 1.5, minY * 1.1, maxX * 1.5, maxY * 1.1)
 
     console.log('visualizing data')
-    const minFrame = Math.min(...data.map(d => d.frame_id))
-    const maxFrame = Math.max(...data.map(d => d.frame_id))
+    const minFrame = Math.min(...data.map(d => d[props.frameId]))
+    const maxFrame = Math.max(...data.map(d => d[props.frameId]))
 
     for (let i = minFrame; i <= maxFrame; i++) {
         viz.drawFrame(dataGrouped[i])

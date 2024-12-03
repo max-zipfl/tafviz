@@ -5,7 +5,8 @@ const typeColors = {
 }
 
 export class Visualizer {
-    constructor(canvas) {
+    constructor(canvas, props) {
+        this.props = props
         this.canvas = canvas
         this.ctx = canvas.getContext('2d')
         this.w = canvas.width
@@ -27,14 +28,14 @@ export class Visualizer {
 
         if (!data.length) return
 
-        const frameId = data[0].frame_id
-        data.forEach(d => this.drawBox(
-            [d.x, d.y],
-            [d.length, d.width],
-            d.psi_rad,
-            typeColors[d.agent_type] || '#ffffff',
+        const frameId = data[0][this.props.frameId]
+        data.forEach(d => this.#drawBox(
+            [d[this.props.x], d[this.props.y]],
+            [d[this.props.l], d[this.props.w]],
+            d[this.props.yaw],
+            typeColors[d[this.props.type]] || '#ffffff',
         ))
-        this.drawFrameCount(frameId)
+        this.#drawFrameCount(frameId)
     }
 
     setDataBounds(minX, minY, maxX, maxY) {
