@@ -12,6 +12,7 @@ const canvas = document.getElementById('stream')
 
 // Global variables
 let speed = parseFloat(speedInputEl.value)
+let paused = false
 
 // Data handling
 
@@ -69,6 +70,13 @@ async function run(e) {
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
     
     for (let i = 0; i < uniqueFrames.length; i++) {
+        if (paused) {
+            // poor-man's pause
+            await sleep(100)
+            i--
+            continue
+        }
+
         const frameId = uniqueFrames[i]
         const nextFrameId = i < uniqueFrames.length - 1 ? uniqueFrames[i+1] : null
 
@@ -90,6 +98,10 @@ function setSpeed(e) {
     speedLabelEl.innerText = speed.toString()
 }
 
+function toggle() {
+    paused = !paused
+}
+
 // Initial stuff
 
 setSpeed(speed)
@@ -99,4 +111,5 @@ setSpeed(speed)
 window.taf = {
     run,
     setSpeed,
+    toggle,
 }

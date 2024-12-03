@@ -36,7 +36,8 @@
     <div id="main">
       <form onsubmit="taf.run(event)">
         <input type="file" id="data-file-input" accept=".csv" />
-        <input type="submit" value="Run" /><br>
+        <input type="submit" value="Run" />
+        <input type="button" value="Play / Pause" onclick="taf.toggle()"/><br>
         <div>
           <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider" onchange="taf.setSpeed(event)">
           <small><span id="speed-label"></span></small>
