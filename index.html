@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAF Scenario Visualization</title>
+
+  <style>
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #000;
+    }
+
+    #main {
+      font-family: monospace;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      color: #fff;
+      padding: 16px
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="stream" ref="stream-canvas" width="1440" height="900" class="rounded">
+      Canvas not available.
+    </canvas>
+
+    <div id="main">
+      <form onsubmit="taf.run(event)">
+        <input type="file" id="data-file-input" accept=".csv" />
+        <input type="submit" value="Run" />
+      </form>
+    </div>
+  </div>
+  <script>
+    const canvas = document.getElementById('stream')
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+  </script>
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>
