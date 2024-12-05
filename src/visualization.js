@@ -33,12 +33,20 @@ export class Visualizer {
         if (!data.length) return
 
         const frameId = data[0][this.props.frameId]
-        data.forEach(d => this.#drawBox(
-            [d[this.props.x], d[this.props.y]],
-            [d[this.props.l], d[this.props.w]],
-            d[this.props.yaw],
-            typeColors[d[this.props.type]] || '#ffffff',
-        ))
+
+        data.forEach(d => {
+            const center = [d[this.props.x], d[this.props.y]]
+            const color = typeColors[d[this.props.type]] || '#ffffff'
+
+            this.#drawBox(
+                center,
+                [d[this.props.l], d[this.props.w]],
+                d[this.props.yaw],
+                color,
+            )
+
+            this.#drawIdLabel(d[this.props.trackId], center, color)
+        })
         this.#drawFrameCount(frameId)
     }
 
@@ -90,13 +98,14 @@ export class Visualizer {
         ctx.stroke()
     }
 
+    /**
+     * Draw a bounding box with given center point, dimensions and rotation.
+     * @param c Bounding box center point (x, y)
+     * @param d Dimensions (x, y)
+     * @param r Rotation (around center point) (radians)
+     * @param color Color of the bounding box (white by default)
+     */
     #drawBox(c, d, r, color = '#ff0000') {
-        /**
-         * Draw a bounding box with given center point, dimensions and rotation.
-         * @param c Bounding box center point (x, y)
-         * @param d Dimensions (x, y)
-         * @param r Rotation (around center point) (radians)
-         */
         const ctx = this.ctx
         let coords = this.#getBox2d(c, d, r)
         coords = coords.map(p => this.#project(p))
@@ -126,6 +135,21 @@ export class Visualizer {
         ctx.textAlign = 'right'
         ctx.textBaseline = 'bottom'
         ctx.fillText(text, textMetrics.width + 12, this.canvas.height - 12)
+    }
+
+    /**
+     * Prints an obstacle's ID next to it 
+     * @param {int} id The ID
+     * @param {array} center The obstacle's position
+     * @param {string} color Text color
+     */
+    #drawIdLabel(id, center, color = '#ffffff') {
+        center = this.#project(center)
+        const ctx = this.ctx
+        const text = id
+        ctx.fillStyle = color
+        ctx.font = 'normal small-caps 10px mono'
+        ctx.fillText(text, center[0] - 12, center[1] - 12)
     }
 
     /**

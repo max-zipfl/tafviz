@@ -35,7 +35,6 @@ For proper visualization, metric coordinates (no lat / lon) are used internally.
 * **Map:** [`k729_2022-03-16.osm`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/maps/k729_2022-03-16.osm) (must be converted to GeoJSON)
 
 ## To Do
-* [ ] Display obstacle properties (ID, velocity, etc.)
 * [ ] Code cleanup
 * [ ] Error handling
 * [ ] Better user experience

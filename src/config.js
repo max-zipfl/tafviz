@@ -6,7 +6,8 @@ const TAF_CONFIG = {
     yaw: 'psi_rad',
     frameId: 'frame_id',
     ts: 'timestamp_ms',
-    type: 'agent_type'
+    type: 'agent_type',
+    trackId: 'track_id',
 }
 
 export const props = {
