@@ -107,14 +107,28 @@ export class Visualizer {
      */
     #drawBox(c, d, r, color = '#ff0000') {
         const ctx = this.ctx
-        let coords = this.#getBox2d(c, d, r)
+        
+        let coords = this.#getBox2d(c, d, r)  // br, bl, fl, fr
         coords = coords.map(p => this.#project(p))
+
+        const cp = this.#project(c)
+        const dp = [coords[3][0] - coords[2][0], coords[0][1] - coords[1][1]]
+
+        let arrow = [
+            [coords[2][0], coords[2][1] + dp[1]/2],
+            [coords[2][0] + dp[1], coords[2][1] + dp[1]/2],
+            [coords[2][0] + dp[1]/2, coords[2][1] + 1*dp[1]/4],
+            [coords[2][0] + dp[1]/2, coords[2][1] + 3*dp[1]/4],
+        ]
+
         coords = this.#rotateBox(coords, r)
+        arrow = arrow.map(p => this.#rotate(p, r, cp))
 
         ctx.fillStyle = color + '66'
         ctx.strokeStyle = color
         ctx.lineWidth = 2
 
+        // box
         ctx.beginPath()
         ctx.moveTo(coords[0][0], coords[0][1])
         ctx.lineTo(coords[1][0], coords[1][1])
@@ -124,6 +138,15 @@ export class Visualizer {
         ctx.closePath()
         ctx.stroke()
         ctx.fill()
+
+        // arrow
+        ctx.beginPath()
+        ctx.moveTo(...arrow[0])
+        ctx.lineTo(...arrow[1])
+        ctx.lineTo(...arrow[2])
+        ctx.moveTo(...arrow[1])
+        ctx.lineTo(...arrow[3])
+        ctx.stroke()
     }
 
     #drawFrameCount(c) {
@@ -218,11 +241,11 @@ export class Visualizer {
      * @returns Array of corner points (tl, tr, br, bl)
      */
     #getBox2d(c, d) {
-        const fl = [c[0] - d[0] / 2, c[1] - d[1] / 2]
-        const fr = [c[0] + d[0] / 2, c[1] - d[1] / 2]
-        const br = [c[0] + d[0] / 2, c[1] + d[1] / 2]
-        const bl = [c[0] - d[0] / 2, c[1] + d[1] / 2]
+        const bl = [c[0] - d[0] / 2, c[1] - d[1] / 2]
+        const fl = [c[0] + d[0] / 2, c[1] - d[1] / 2]
+        const fr = [c[0] + d[0] / 2, c[1] + d[1] / 2]
+        const br = [c[0] - d[0] / 2, c[1] + d[1] / 2]
 
-        return [fl, fr, br, bl]
+        return [br, bl, fl, fr]
     }
 }
