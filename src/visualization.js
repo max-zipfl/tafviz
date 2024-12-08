@@ -1,7 +1,7 @@
 const typeColors = {
-    'Car': '#4FC3F7',
-    'Unclassified': '#fff9800',
-    'Pedestrian': '#BA68C8',
+    'car': '#4FC3F7',
+    'unclassified': '#fff9800',
+    'pedestrian': '#BA68C8',
 }
 
 export class Visualizer {
@@ -36,7 +36,7 @@ export class Visualizer {
 
         data.forEach(d => {
             const center = [d[this.props.x], d[this.props.y]]
-            const color = typeColors[d[this.props.type]] || '#ffffff'
+            const color = typeColors[d[this.props.type.toLowerCase()]] || '#ffffff'
 
             this.#drawBox(
                 center,

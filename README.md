@@ -2,7 +2,7 @@
 
 Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written [by hand](https://muetsch.io/statement-about-generative-ai.html). Work in progress.
 
-<img src="assets/screenshot.png">
+<img src="assets/screenshot_2.png">
 
 ## Usage
 ```bash

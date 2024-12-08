@@ -8,6 +8,7 @@ const TAF_CONFIG = {
     ts: 'timestamp_ms',
     type: 'agent_type',
     trackId: 'track_id',
+    caseId: 'case_id',
 }
 
 export const props = {

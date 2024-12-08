@@ -99,6 +99,12 @@
           <small>(optional without map)</small>
         </div>
 
+        <div>
+          <label for="caseid-input">Case ID:</label>
+          <input type="number" id="caseid-input" min="0" value="1"/>
+          <small>(optional, INTERACTION only)</small>
+        </div>
+
         <div class="input-group">
           <label for="speed-slider">Playback Speed (<small id="speed-label"></small>x):</label>
           <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider" onchange="taf.setSpeed(event)" style="margin-left: 8px;">

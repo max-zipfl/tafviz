@@ -7,6 +7,7 @@ import { crs, props } from "./config.js"
 const csvInputEl = document.getElementById('data-csv-input')
 const mapInputEl = document.getElementById('data-geojson-input')
 const originInputEl = document.getElementById('origin-input')
+const caseIdInputEl = document.getElementById('caseid-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const canvas = document.getElementById('stream')
@@ -24,6 +25,10 @@ let running = false
  */
 function readOrigin() {
     return originInputEl.value.split(',').map(s => s.trim()).map(parseFloat)
+}
+
+function readCaseId() {
+    return parseInt(caseIdInputEl.value) || 0
 }
 
 /**
@@ -70,6 +75,10 @@ async function readGeoJSON() {
         }
         reader.readAsText(input)
     })
+}
+
+function filterCase(data, caseId=0) {
+    return data.filter(d => !d.hasOwnProperty(props.caseId) || d[props.caseId] === null || d[props.caseId] === caseId)
 }
 
 /**
@@ -133,6 +142,7 @@ async function run(e) {
     try {
         console.log('reading csv')
         data = await readCsv(ref)  // local or global coordinates depending on whether map is used
+        data = filterCase(data, readCaseId())
         dataGrouped = groupByFrames(data)
     } catch (e) {
         alert('Failed to read scenario CSV data')
@@ -174,6 +184,9 @@ async function run(e) {
             await sleep((t1 - t0) / speed)
         }
     }
+
+    console.log('scenario finished')
+    running = false
 }
 
 function setSpeed(e) {
