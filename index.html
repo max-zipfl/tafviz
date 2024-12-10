@@ -9,6 +9,7 @@
   <style>
     body {
       font-family: monospace;
+      color: #fff;
     }
 
     #container {
@@ -56,6 +57,27 @@
       gap: 8px;
     }
 
+    #frame-count {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-family: monospace;
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 10px;
+    }
+
+    #attribution {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+    }
+
+    #attribution img {
+      filter: invert(100%);
+    }
+
     h1 {
       font-size: 1.2rem;
     }
@@ -72,13 +94,16 @@
       <canvas id="stream" ref="stream-canvas" width="500" height="500" class="rounded">
         Canvas not available.
       </canvas>
+
+      <div id="frame-count"></div>
+      <div id="attribution"><a href="https://github.com/muety/tafviz" target="_blank"><img src="assets/github.svg" width="16px"></a></div>
     </div>
 
     <div id="controls">
       <div>
         <h1 style="margin-top: 0">TAF Scenario Visualization</h1>
         <p>
-          Play scenarios recorded in <a href="https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/" target="_blank">TAF</a> (or INTERACTION) format with minimum overhead and maximum flexibility. Scenario is just an obstacle list with 7 required fields, map is just a set of polylines.
+          Play scenarios recorded in <a href="https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/" target="_blank">TAF</a> (or INTERACTION) format with minimum overhead and maximum flexibility. Scenario is just an obstacle list with 7 required fields, map is just a set of polylines. More at <a href="https://github.com/muety/tafviz" target="_blank">GitHub</a>.
         </p>
       </div>
 
@@ -113,7 +138,6 @@
         <div id="main-controls">
           <input type="button" value="Play / Pause" onclick="taf.toggle()" />
           <input type="submit" value="Run" />
-
         </div>
       </form>
     </div>

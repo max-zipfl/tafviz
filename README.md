@@ -2,6 +2,8 @@
 
 Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written [by hand](https://muetsch.io/statement-about-generative-ai.html). Work in progress.
 
+**Demo available [here](https://apps.muetsch.io/tafviz).**
+
 <img src="assets/screenshot_2.png">
 
 ## Usage
@@ -35,11 +37,9 @@ For proper visualization, metric coordinates (no lat / lon) are used internally.
 * **Map:** [`k729_2022-03-16.osm`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/maps/k729_2022-03-16.osm) (must be converted to GeoJSON)
 
 ## To Do
+* [ ] OSM / Lanelet2 support
 * [ ] Code cleanup
 * [ ] Error handling
-* [ ] Better user experience
-* [ ] Zoom + Drag & Drop
-* [ ] OSM / Lanelet2 support
 
 ## See it in action
 [screencast.webm](https://github.com/user-attachments/assets/cf6de57b-01fc-49cb-aa3b-cc9ed425d94c)

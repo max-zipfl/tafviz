@@ -1,5 +1,5 @@
 import { Visualizer } from "./visualization.js"
-import { getMinMax2D, sleep } from "./utils.js"
+import { DragHandler, getMinMax2D, sleep } from "./utils.js"
 import { crs, props } from "./config.js"
 
 // HTML references
@@ -10,6 +10,7 @@ const originInputEl = document.getElementById('origin-input')
 const caseIdInputEl = document.getElementById('caseid-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
+const frameCountEl = document.getElementById('frame-count')
 const canvas = document.getElementById('stream')
 
 // Global variables
@@ -77,7 +78,7 @@ async function readGeoJSON() {
     })
 }
 
-function filterCase(data, caseId=0) {
+function filterCase(data, caseId = 0) {
     return data.filter(d => !d.hasOwnProperty(props.caseId) || d[props.caseId] === null || d[props.caseId] === caseId)
 }
 
@@ -112,6 +113,7 @@ function groupByFrames(data) {
 // Drawing
 
 const viz = new Visualizer(canvas, props)
+const dragHandler = new DragHandler((delta) => viz.adjustOffset(delta))
 
 // UI binding
 
@@ -130,13 +132,12 @@ async function run(e) {
         map = await readGeoJSON()
     } catch (e) { }
 
-    try {
-        if (map) {
-            ref = readOrigin()
-            ref[0]
+    if (map) {
+        ref = readOrigin()
+        if (ref.length < 2) {
+            alert('Failed to parse origin point. You need to specify one when wanting to visualize on a map.')
+            return
         }
-    } catch (e) {
-        alert('Failed to parse origin point. You need to specify one when wanting to visualize on a map.')
     }
 
     try {
@@ -176,6 +177,7 @@ async function run(e) {
 
         viz.drawFrame(dataGrouped[frameId])
         if (map) viz.drawMap(map)
+        frameCountEl.innerText = `t=${frameId} (${Math.round((i / uniqueFrames.length) * 100)} %)`
 
         if (nextFrameId) {
             const t0 = dataGrouped[frameId][0][props.ts]
@@ -197,6 +199,13 @@ function setSpeed(e) {
 function toggle() {
     paused = !paused
 }
+
+// Listeners
+
+canvas.addEventListener('wheel', (e) => viz.adjustZoom(e.deltaY))
+canvas.addEventListener('mousedown', (e) => dragHandler.onStart(e))
+canvas.addEventListener('mousemove', (e) => dragHandler.onDrag(e))
+canvas.addEventListener('mouseup', (e) => dragHandler.onStop(e))
 
 // Initial stuff
 

@@ -16,3 +16,9 @@ export const props = {
 }
 
 export const crs = 'EPSG:4326'
+
+export const typeColors = {
+    'car': '#4FC3F7',
+    'unclassified': '#fff9800',
+    'pedestrian': '#BA68C8',
+}

@@ -1,8 +1,8 @@
-const typeColors = {
-    'car': '#4FC3F7',
-    'unclassified': '#fff9800',
-    'pedestrian': '#BA68C8',
-}
+import { typeColors } from "./config.js"
+
+const SCROLL_FACTOR = -0.001
+const ZOOM_MIN = 0.1
+const ZOOM_MAX = 3
 
 export class Visualizer {
     /**
@@ -16,11 +16,50 @@ export class Visualizer {
         this.ctx = canvas.getContext('2d')
         this.w = canvas.width
         this.h = canvas.height
+        this.zoom = 1.0
+        this.offset = [0, 0]
 
         this.min = [0, 0]
         this.max = [this.w, this.h]
 
+        this.stateCache = {
+            frame: null,
+            map: null,
+        }
+
         this.#initCanvas()
+    }
+    
+    /**
+     * Zoom in or out on the canvas by given amount
+     * @param {number} delta Zoom adjustment factor (single scalar)
+     */
+    adjustZoom(delta) {
+        const zoom = 1 + delta * SCROLL_FACTOR
+
+        if ((this.zoom + zoom - 1) <= ZOOM_MIN && delta > 0) return
+        if ((this.zoom + zoom - 1) >= ZOOM_MAX && delta < 0) return
+
+        this.zoom += zoom - 1
+
+        this.clear()
+        this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2)
+        this.ctx.scale(zoom, zoom)
+        this.ctx.translate(-this.canvas.width / 2 + this.offset[0], -this.canvas.height / 2 + this.offset[0])
+        this.#restoreState()
+    }
+
+    /**
+     * Drag the canvas horizontally and vertically by the given amount
+     * @param {array} delta X- and Y adjustment in pixels
+     */
+    adjustOffset(delta) {
+        // scale translate delta by zoom level to move map approx. the same amount that the cursor had moved
+        // TODO: for whatever reason, this compensation is off the more extreme the zoom level is 
+        delta = delta.map(d => d / this.zoom)
+        this.clear()
+        this.ctx.translate(...delta)
+        this.#restoreState()
     }
 
     /**
@@ -29,8 +68,9 @@ export class Visualizer {
      */
     drawFrame(data) {
         this.clear()
-
+        
         if (!data.length) return
+        this.stateCache.frame = data
 
         const frameId = data[0][this.props.frameId]
 
@@ -47,7 +87,6 @@ export class Visualizer {
 
             this.#drawIdLabel(d[this.props.trackId], center, color)
         })
-        this.#drawFrameCount(frameId)
     }
 
     /**
@@ -55,6 +94,7 @@ export class Visualizer {
      * @param {array} lines 2D coordinates of polyline points
      */
     drawMap(lines) {
+        this.stateCache.map = lines
         lines.forEach(l => this.#drawLine(l))
     }
 
@@ -149,17 +189,6 @@ export class Visualizer {
         ctx.stroke()
     }
 
-    #drawFrameCount(c) {
-        const ctx = this.ctx
-        const text = `t=${c}`
-        const textMetrics = ctx.measureText(text)
-        ctx.fillStyle = '#fff'
-        ctx.font = 'bold small-caps 12px mono'
-        ctx.textAlign = 'right'
-        ctx.textBaseline = 'bottom'
-        ctx.fillText(text, textMetrics.width + 12, this.canvas.height - 12)
-    }
-
     /**
      * Prints an obstacle's ID next to it 
      * @param {int} id The ID
@@ -247,5 +276,10 @@ export class Visualizer {
         const br = [c[0] - d[0] / 2, c[1] + d[1] / 2]
 
         return [br, bl, fl, fr]
+    }
+
+    #restoreState() {
+        if (this.stateCache.frame) this.drawFrame(this.stateCache.frame)
+        if (this.stateCache.map) this.drawMap(this.stateCache.map)
     }
 }
