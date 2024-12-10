@@ -82,7 +82,8 @@
       font-size: 1.2rem;
     }
 
-    a:link, a:visited {
+    a:link,
+    a:visited {
       color: #4FC3F7;
     }
   </style>
@@ -94,23 +95,24 @@
       <canvas id="stream" ref="stream-canvas" width="500" height="500" class="rounded">
         Canvas not available.
       </canvas>
-
-      <div id="frame-count"></div>
-      <div id="attribution"><a href="https://github.com/muety/tafviz" target="_blank"><img src="assets/github.svg" width="16px"></a></div>
     </div>
 
     <div id="controls">
       <div>
         <h1 style="margin-top: 0">TAF Scenario Visualization</h1>
         <p>
-          Play scenarios recorded in <a href="https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/" target="_blank">TAF</a> (or INTERACTION) format with minimum overhead and maximum flexibility. Scenario is just an obstacle list with 7 required fields, map is just a set of polylines. More at <a href="https://github.com/muety/tafviz" target="_blank">GitHub</a>.
+          Play scenarios recorded in <a
+            href="https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/"
+            target="_blank">TAF</a> (or INTERACTION) format with minimum overhead and maximum flexibility. Scenario is
+          just an obstacle list with 7 required fields, map is just a set of polylines. More at <a
+            href="https://github.com/muety/tafviz" target="_blank">GitHub</a>.
         </p>
       </div>
 
       <form onsubmit="taf.run(event)">
         <div>
           <label for="data-csv-input">Scenario CSV:</label>
-          <input type="file" id="data-csv-input" accept=".csv" required/>
+          <input type="file" id="data-csv-input" accept=".csv" required />
         </div>
 
         <div>
@@ -120,19 +122,21 @@
 
         <div>
           <label for="origin-input">Origin (WGS84 Lat/Lon):</label>
-          <input type="text" id="origin-input" placeholder="49.01160993928, 8.43856470258" pattern="\d+\.\d+,\s?\d+\.\d+"/>
+          <input type="text" id="origin-input" placeholder="49.01160993928, 8.43856470258"
+            pattern="\d+\.\d+,\s?\d+\.\d+" />
           <small>(optional without map)</small>
         </div>
 
         <div>
           <label for="caseid-input">Case ID:</label>
-          <input type="number" id="caseid-input" min="0" value="1"/>
+          <input type="number" id="caseid-input" min="0" value="1" />
           <small>(optional, INTERACTION only)</small>
         </div>
 
         <div class="input-group">
           <label for="speed-slider">Playback Speed (<small id="speed-label"></small>x):</label>
-          <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider" onchange="taf.setSpeed(event)" style="margin-left: 8px;">
+          <input type="range" min="0.5" max="3" value="1" step="0.5" class="slider" id="speed-slider"
+            onchange="taf.setSpeed(event)" style="margin-left: 8px;">
         </div>
 
         <div id="main-controls">
@@ -141,6 +145,10 @@
         </div>
       </form>
     </div>
+
+    <div id="frame-count"></div>
+    <div id="attribution"><a href="https://github.com/muety/tafviz" target="_blank"><img src="assets/github.svg"
+          width="16px"></a></div>
   </div>
   <script>
     const canvas = document.getElementById('stream')

@@ -17,6 +17,7 @@ const canvas = document.getElementById('stream')
 let speed = parseFloat(speedInputEl.value)
 let paused = false
 let running = false
+let loaded = false
 
 // Data handling
 
@@ -121,6 +122,7 @@ async function run(e) {
     e.preventDefault()
 
     if (running) return
+    loaded = false
 
     let map
     let ref
@@ -161,6 +163,7 @@ async function run(e) {
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
 
     running = true
+    loaded = true
 
     for (let i = 0; i < uniqueFrames.length; i++) {
         if (paused) {
@@ -197,6 +200,7 @@ function setSpeed(e) {
 }
 
 function toggle() {
+    if (!loaded) return
     paused = !paused
 }
 
