@@ -76,7 +76,7 @@ export class Visualizer {
 
         data.forEach(d => {
             const center = [d[this.props.x], d[this.props.y]]
-            const color = typeColors[d[this.props.type.toLowerCase()]] || '#ffffff'
+            const color = typeColors[d[this.props.type].toLowerCase()] || '#ffffff'
 
             this.#drawBox(
                 center,
