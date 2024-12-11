@@ -1,6 +1,6 @@
 # 🚙 tafviz
 
-Extremely simple and lean 2D visualization of traffic scenarios in 250 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written [by hand](https://muetsch.io/statement-about-generative-ai.html). Work in progress.
+Extremely simple and lean 2D visualization of traffic scenarios in 350 lines of JavaScript. Reads a CSV object list and an optional map (simple polylines stored as GeoJSON) and plays the scenario right in your browser without any dependencies. Written [by hand](https://muetsch.io/statement-about-generative-ai.html). Work in progress.
 
 **Demo available [here](https://apps.muetsch.io/tafviz).**
 
@@ -29,15 +29,21 @@ You can use GDAL to convert a Lanelet2 map from OSM format to GeoJSON.
 OSM_USE_CUSTOM_INDEXING=NO ogr2ogr -f GeoJSON k729.geojson k729.osm lines
 ```
 
+Alternatively, you can use this **[web UI](https://gdal3.js.org/)** to perform the conversion right in your browser without installing any dependencies (thanks, [@bugra9](https://github.com/bugra9) for porting GDAL to WASM). Set the options as follow:
+
+<details>
+<summary>gdal3.js Options</summary>
+<img src="assets/screenshot_ogr2ogr.png" height="500px">
+</details>
+
 ## Details
 For proper visualization, metric coordinates (no lat / lon) are used internally. Thus, input lat / lon coordinates (by default, WGS84 is assumed) are automatically converted to web mercator projection.
 
 ## Example Data
 * **Scenario:** [`vehicle_tracks_000.csv`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/recorded_trackfiles/k729_2022-03-16/vehicle_tracks_000.csv)
-* **Map:** [`k729_2022-03-16.osm`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/maps/k729_2022-03-16.osm) (must be converted to GeoJSON)
+* **Map:** [`k729_2022-03-16.osm`](https://github.com/fzi-forschungszentrum-informatik/test-area-autonomous-driving-dataset/blob/master/datasets/maps/k729_2022-03-16.osm) (must be converted to GeoJSON, see above)
 
 ## To Do
-* [ ] OSM / Lanelet2 support
 * [ ] Code cleanup
 * [ ] Error handling
 
