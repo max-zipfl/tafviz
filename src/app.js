@@ -11,6 +11,8 @@ const caseIdInputEl = document.getElementById('caseid-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const frameCountEl = document.getElementById('frame-count')
+const collapseBtn = document.getElementById('collapse-control')
+const controlsContent = document.getElementById('controls-content')
 const canvas = document.getElementById('stream')
 
 // Global variables
@@ -204,6 +206,12 @@ function toggle() {
     paused = !paused
 }
 
+function collapseControls() {
+    const isCollapsed = controlsContent.style.display === 'none'
+    controlsContent.style.display = isCollapsed ? 'block' : 'none'
+    collapseBtn.innerHTML = isCollapsed ? '&#11205;' : '&#11206;'
+}
+
 // Listeners
 
 canvas.addEventListener('wheel', (e) => viz.adjustZoom(e.deltaY))
@@ -221,4 +229,5 @@ window.taf = {
     run,
     setSpeed,
     toggle,
+    collapseControls,
 }
