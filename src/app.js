@@ -11,6 +11,8 @@ const caseIdInputEl = document.getElementById('caseid-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const frameCountEl = document.getElementById('frame-count')
+const showOrientationCb = document.getElementById('orientation-checkbox')
+const showLabelsCb = document.getElementById('labels-checkbox')
 const collapseBtn = document.getElementById('collapse-control')
 const controlsContent = document.getElementById('controls-content')
 const canvas = document.getElementById('stream')
@@ -21,6 +23,7 @@ let paused = false
 let running = false
 let loaded = false
 let showOrientation = true
+let showLabels = true
 
 // Data handling
 
@@ -181,7 +184,7 @@ async function run(e) {
 
         if (!dataGrouped[frameId].length) continue
 
-        viz.drawFrame(dataGrouped[frameId], showOrientation)
+        viz.drawFrame(dataGrouped[frameId], showOrientation, showLabels)
         if (map) viz.drawMap(map)
         frameCountEl.innerText = `t=${frameId} (${Math.round((i / uniqueFrames.length) * 100)} %)`
 
@@ -204,6 +207,12 @@ function setSpeed(e) {
 
 function setShowOrientation(e) {
     showOrientation = (typeof e === 'boolean') ? e : e.target.checked
+    showOrientationCb.checked = showOrientation
+}
+
+function setShowLabels(e) {
+    showLabels = (typeof e === 'boolean') ? e : e.target.checked
+    showLabelsCb.checked = showLabels
 }
 
 function toggle() {
@@ -228,6 +237,7 @@ canvas.addEventListener('mouseup', (e) => dragHandler.onStop(e))
 
 setSpeed(speed)
 setShowOrientation(true)
+setShowLabels(true)
 
 // Exports
 
@@ -237,4 +247,5 @@ window.taf = {
     toggle,
     collapseControls,
     setShowOrientation,
+    setShowLabels,
 }

@@ -51,6 +51,10 @@
       align-items: center;
     }
 
+    .sub-input-group label {
+      min-width: 0 !important;
+    }
+
     #main-controls {
       display: flex;
       justify-content: right;
@@ -153,8 +157,14 @@
           </div>
 
           <div class="input-group">
-            <label for="speed-slider">Show orientation:</label>
-            <input type="checkbox" id="orientation-checkbox" onchange="taf.setShowOrientation(event)" style="margin-left: 8px;" checked>
+            <label>Show:</label>
+            <div class="sub-input-group">
+              <input type="checkbox" id="orientation-checkbox" onchange="taf.setShowOrientation(event)" style="margin-left: 8px;" checked>
+              <label for="orientation-checkbox">Orientation</label>
+
+              <input type="checkbox" id="labels-checkbox" onchange="taf.setShowLabels(event)" style="margin-left: 8px;" checked>
+              <label for="labels-checkbox">Labels</label>
+            </div>
           </div>
 
           <div id="main-controls">

@@ -25,6 +25,8 @@ export class Visualizer {
         this.stateCache = {
             frame: null,
             map: null,
+            showLabels: null,
+            showOrientation: null,
         }
 
         this.#initCanvas()
@@ -66,11 +68,13 @@ export class Visualizer {
      * Draw a single traffic scene defined.
      * @param {array} data Array of objects with required keys: (frame_id, x, y, psi_rad, agent_type)
      */
-    drawFrame(data, showOrientation) {
+    drawFrame(data, showOrientation = true, showLabels = true) {
         this.clear()
         
         if (!data.length) return
         this.stateCache.frame = data
+        this.stateCache.showOrientation = showOrientation
+        this.stateCache.showLabels = showLabels
 
         const frameId = data[0][this.props.frameId]
 
@@ -86,7 +90,7 @@ export class Visualizer {
                 showOrientation,
             )
 
-            this.#drawIdLabel(d[this.props.trackId], center, color)
+            if (showLabels) this.#drawIdLabel(d[this.props.trackId], center, color)
         })
     }
 
@@ -282,7 +286,7 @@ export class Visualizer {
     }
 
     #restoreState() {
-        if (this.stateCache.frame) this.drawFrame(this.stateCache.frame)
+        if (this.stateCache.frame) this.drawFrame(this.stateCache.frame, this.stateCache.showOrientation, this.stateCache.showLabels)
         if (this.stateCache.map) this.drawMap(this.stateCache.map)
     }
 }
