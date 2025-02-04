@@ -66,7 +66,7 @@ export class Visualizer {
      * Draw a single traffic scene defined.
      * @param {array} data Array of objects with required keys: (frame_id, x, y, psi_rad, agent_type)
      */
-    drawFrame(data) {
+    drawFrame(data, showOrientation) {
         this.clear()
         
         if (!data.length) return
@@ -83,6 +83,7 @@ export class Visualizer {
                 [d[this.props.l], d[this.props.w]],
                 d[this.props.yaw],
                 color,
+                showOrientation,
             )
 
             this.#drawIdLabel(d[this.props.trackId], center, color)
@@ -145,7 +146,7 @@ export class Visualizer {
      * @param r Rotation (around center point) (radians)
      * @param color Color of the bounding box (white by default)
      */
-    #drawBox(c, d, r, color = '#ff0000') {
+    #drawBox(c, d, r, color = '#ff0000', showOrientation = true) {
         const ctx = this.ctx
         
         let coords = this.#getBox2d(c, d, r)  // br, bl, fl, fr
@@ -180,13 +181,15 @@ export class Visualizer {
         ctx.fill()
 
         // arrow
-        ctx.beginPath()
-        ctx.moveTo(...arrow[0])
-        ctx.lineTo(...arrow[1])
-        ctx.lineTo(...arrow[2])
-        ctx.moveTo(...arrow[1])
-        ctx.lineTo(...arrow[3])
-        ctx.stroke()
+        if (showOrientation) {
+            ctx.beginPath()
+            ctx.moveTo(...arrow[0])
+            ctx.lineTo(...arrow[1])
+            ctx.lineTo(...arrow[2])
+            ctx.moveTo(...arrow[1])
+            ctx.lineTo(...arrow[3])
+            ctx.stroke()
+        }
     }
 
     /**

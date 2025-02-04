@@ -20,6 +20,7 @@ let speed = parseFloat(speedInputEl.value)
 let paused = false
 let running = false
 let loaded = false
+let showOrientation = true
 
 // Data handling
 
@@ -180,7 +181,7 @@ async function run(e) {
 
         if (!dataGrouped[frameId].length) continue
 
-        viz.drawFrame(dataGrouped[frameId])
+        viz.drawFrame(dataGrouped[frameId], showOrientation)
         if (map) viz.drawMap(map)
         frameCountEl.innerText = `t=${frameId} (${Math.round((i / uniqueFrames.length) * 100)} %)`
 
@@ -199,6 +200,10 @@ async function run(e) {
 function setSpeed(e) {
     speed = parseFloat(typeof e === 'number' ? e : e.target.value)
     speedLabelEl.innerText = speed.toString()
+}
+
+function setShowOrientation(e) {
+    showOrientation = (typeof e === 'boolean') ? e : e.target.checked
 }
 
 function toggle() {
@@ -222,6 +227,7 @@ canvas.addEventListener('mouseup', (e) => dragHandler.onStop(e))
 // Initial stuff
 
 setSpeed(speed)
+setShowOrientation(true)
 
 // Exports
 
@@ -230,4 +236,5 @@ window.taf = {
     setSpeed,
     toggle,
     collapseControls,
+    setShowOrientation,
 }
