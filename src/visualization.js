@@ -154,20 +154,21 @@ export class Visualizer {
         const ctx = this.ctx
         
         let coords = this.#getBox2d(c, d, r)  // br, bl, fl, fr
+        coords = this.#rotateBox(coords, r)
         coords = coords.map(p => this.#project(p))
 
-        const cp = this.#project(c)
-        const dp = [coords[3][0] - coords[2][0], coords[0][1] - coords[1][1]]
+        const [br, bl, fl, fr] = [...coords]
+        const cp = this.#project(c)  // center
+        const fl2fr = [fr[0] - fl[0], fr[1] - fl[1]]  // fl -> fr
+        const fc = [fl[0] + fl2fr[0] / 2, fl[1] + fl2fr[1] / 2]  // front center
+        const cp2fc = [fc[0] - cp[0], fc[1] - cp[1]]  // center -> front center
 
-        let arrow = [
-            [coords[2][0], coords[2][1] + dp[1]/2],
-            [coords[2][0] + dp[1], coords[2][1] + dp[1]/2],
-            [coords[2][0] + dp[1]/2, coords[2][1] + 1*dp[1]/4],
-            [coords[2][0] + dp[1]/2, coords[2][1] + 3*dp[1]/4],
+        const arrow = [
+            [fc[0], fc[1]],
+            [fc[0] + cp2fc[0] , fc[1] + cp2fc[1]],
+            [fl[0] + cp2fc[0] / 2, fl[1] + cp2fc[1] / 2],  // arrow tip left
+            [fr[0] + cp2fc[0] / 2, fr[1] + cp2fc[1] / 2],  // arrow tip right
         ]
-
-        coords = this.#rotateBox(coords, r)
-        arrow = arrow.map(p => this.#rotate(p, r, cp))
 
         ctx.fillStyle = color + '66'
         ctx.strokeStyle = color
@@ -222,6 +223,7 @@ export class Visualizer {
             ((pp[0] - this.min[0]) / (this.max[0] - this.min[0])) * (this.w - 0) + 0,
             ((pp[1] - this.min[1]) / (this.max[1] - this.min[1])) * (this.h - 0) + 0,
         ]
+        pp[1] = this.h - pp[1]  // flip y axis
         return pp
     }
 
