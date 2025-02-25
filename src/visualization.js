@@ -237,6 +237,8 @@ export class Visualizer {
     #rotate(p, r, centroid) {
         let pp = [...p]
 
+        r += Math.PI  // flip y axis
+
         // Translate to origin
         pp[0] -= centroid[0]
         pp[1] -= centroid[1]
