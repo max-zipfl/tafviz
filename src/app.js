@@ -129,6 +129,7 @@ async function run(e) {
 
     if (running) return
     loaded = false
+    setLoadingIndicator(true)
 
     let map
     let ref
@@ -144,6 +145,7 @@ async function run(e) {
         ref = readOrigin()
         if (ref.length < 2) {
             alert('Failed to parse origin point. You need to specify one when wanting to visualize on a map.')
+            setLoadingIndicator(false)
             return
         }
     }
@@ -155,6 +157,7 @@ async function run(e) {
         dataGrouped = groupByFrames(data)
     } catch (e) {
         alert('Failed to read scenario CSV data')
+        setLoadingIndicator(false)
         return
     }
 
@@ -170,6 +173,8 @@ async function run(e) {
 
     running = true
     loaded = true
+    setLoadingIndicator(false)
+
 
     for (let i = 0; i < uniqueFrames.length; i++) {
         if (paused) {
@@ -218,6 +223,10 @@ function setShowLabels(e) {
 function toggle() {
     if (!loaded) return
     paused = !paused
+}
+
+function setLoadingIndicator(loading) {
+    frameCountEl.innerText = loading ? 'Loading scenario ...' : ''
 }
 
 function collapseControls() {
