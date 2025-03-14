@@ -1,0 +1,3434 @@
+{
+    "type": "FeatureCollection",
+    "name": "lines",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335475",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4376666,
+                        49.0115002
+                    ],
+                    [
+                        8.4380401,
+                        49.0115156
+                    ],
+                    [
+                        8.4381387,
+                        49.0115196
+                    ],
+                    [
+                        8.4382252,
+                        49.0115183
+                    ],
+                    [
+                        8.4383583,
+                        49.0115183
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335476",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4376678,
+                        49.0114736
+                    ],
+                    [
+                        8.4380115,
+                        49.0114886
+                    ],
+                    [
+                        8.4381538,
+                        49.0114919
+                    ],
+                    [
+                        8.4382953,
+                        49.0114895
+                    ],
+                    [
+                        8.4383969,
+                        49.0114934
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335477",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384063,
+                        49.0114657
+                    ],
+                    [
+                        8.4383043,
+                        49.0114615
+                    ],
+                    [
+                        8.4381712,
+                        49.0114639
+                    ],
+                    [
+                        8.4380472,
+                        49.0114585
+                    ],
+                    [
+                        8.4378554,
+                        49.0114514
+                    ],
+                    [
+                        8.4376673,
+                        49.0114437
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335478",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384063,
+                        49.0114657
+                    ],
+                    [
+                        8.4384338,
+                        49.011467
+                    ],
+                    [
+                        8.4384901,
+                        49.0114672
+                    ],
+                    [
+                        8.4385404,
+                        49.0114499
+                    ],
+                    [
+                        8.4385897,
+                        49.0114211
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335479",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385897,
+                        49.0114211
+                    ],
+                    [
+                        8.4386641,
+                        49.0113379
+                    ],
+                    [
+                        8.4388485,
+                        49.0111611
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335480",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388847,
+                        49.0111785
+                    ],
+                    [
+                        8.4386312,
+                        49.0114318
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335481",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386312,
+                        49.0114318
+                    ],
+                    [
+                        8.4385793,
+                        49.011465
+                    ],
+                    [
+                        8.4385233,
+                        49.0114912
+                    ],
+                    [
+                        8.438473,
+                        49.0114967
+                    ],
+                    [
+                        8.4383969,
+                        49.0114934
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335482",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383969,
+                        49.0114934
+                    ],
+                    [
+                        8.4384805,
+                        49.0115006
+                    ],
+                    [
+                        8.4386316,
+                        49.0115365
+                    ],
+                    [
+                        8.4388629,
+                        49.0115963
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335483",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388629,
+                        49.0115963
+                    ],
+                    [
+                        8.438994,
+                        49.0116311
+                    ],
+                    [
+                        8.4391308,
+                        49.0116724
+                    ],
+                    [
+                        8.4392931,
+                        49.0117274
+                    ],
+                    [
+                        8.4394493,
+                        49.0117903
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335484",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4395041,
+                        49.0117664
+                    ],
+                    [
+                        8.4392815,
+                        49.0116794
+                    ],
+                    [
+                        8.4390777,
+                        49.0116172
+                    ],
+                    [
+                        8.4388954,
+                        49.0115605
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335485",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388954,
+                        49.0115605
+                    ],
+                    [
+                        8.4385773,
+                        49.0114932
+                    ],
+                    [
+                        8.4384063,
+                        49.0114657
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335486",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385897,
+                        49.0114211
+                    ],
+                    [
+                        8.4384691,
+                        49.0115603
+                    ],
+                    [
+                        8.4383954,
+                        49.011659
+                    ],
+                    [
+                        8.4383193,
+                        49.0117651
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335487",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383193,
+                        49.0117651
+                    ],
+                    [
+                        8.4381738,
+                        49.0119833
+                    ],
+                    [
+                        8.43811,
+                        49.0121029
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335488",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4381489,
+                        49.012113
+                    ],
+                    [
+                        8.43822,
+                        49.0119912
+                    ],
+                    [
+                        8.4383628,
+                        49.0117682
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335489",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383628,
+                        49.0117682
+                    ],
+                    [
+                        8.4384863,
+                        49.0115966
+                    ],
+                    [
+                        8.4386312,
+                        49.0114318
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335490",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383193,
+                        49.0117651
+                    ],
+                    [
+                        8.4383161,
+                        49.0117239
+                    ],
+                    [
+                        8.438306,
+                        49.0116935
+                    ],
+                    [
+                        8.4382799,
+                        49.0116733
+                    ],
+                    [
+                        8.43825,
+                        49.0116588
+                    ],
+                    [
+                        8.4382034,
+                        49.0116452
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335491",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382034,
+                        49.0116452
+                    ],
+                    [
+                        8.4380277,
+                        49.0116223
+                    ],
+                    [
+                        8.4378078,
+                        49.0116141
+                    ],
+                    [
+                        8.437498,
+                        49.0116025
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335492",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4374926,
+                        49.0115581
+                    ],
+                    [
+                        8.4380385,
+                        49.0115814
+                    ],
+                    [
+                        8.4381282,
+                        49.0115919
+                    ],
+                    [
+                        8.4382269,
+                        49.0116095
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335493",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382269,
+                        49.0116095
+                    ],
+                    [
+                        8.4382929,
+                        49.0116306
+                    ],
+                    [
+                        8.4383308,
+                        49.0116491
+                    ],
+                    [
+                        8.4383597,
+                        49.0116801
+                    ],
+                    [
+                        8.4383664,
+                        49.011708
+                    ],
+                    [
+                        8.4383633,
+                        49.0117329
+                    ],
+                    [
+                        8.4383628,
+                        49.0117682
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335494",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382269,
+                        49.0116095
+                    ],
+                    [
+                        8.4388002,
+                        49.011727
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335495",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388002,
+                        49.011727
+                    ],
+                    [
+                        8.4390892,
+                        49.0118035
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335496",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4390892,
+                        49.0118035
+                    ],
+                    [
+                        8.4394466,
+                        49.0119319
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335497",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382034,
+                        49.0116452
+                    ],
+                    [
+                        8.4387694,
+                        49.0117487
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335498",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387694,
+                        49.0117487
+                    ],
+                    [
+                        8.4389325,
+                        49.0117912
+                    ],
+                    [
+                        8.4390805,
+                        49.0118334
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335499",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4390805,
+                        49.0118334
+                    ],
+                    [
+                        8.4394057,
+                        49.0119561
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335500",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391134,
+                        49.0117863
+                    ],
+                    [
+                        8.4389558,
+                        49.0117366
+                    ],
+                    [
+                        8.4388096,
+                        49.0117015
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335501",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388096,
+                        49.0117015
+                    ],
+                    [
+                        8.4387177,
+                        49.0116808
+                    ],
+                    [
+                        8.4386936,
+                        49.0116627
+                    ],
+                    [
+                        8.4386594,
+                        49.0116232
+                    ],
+                    [
+                        8.4386443,
+                        49.0115941
+                    ],
+                    [
+                        8.4386353,
+                        49.0115495
+                    ],
+                    [
+                        8.4386381,
+                        49.0114882
+                    ],
+                    [
+                        8.4386775,
+                        49.0114439
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335502",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386775,
+                        49.0114439
+                    ],
+                    [
+                        8.4389236,
+                        49.0111937
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335503",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386312,
+                        49.0114318
+                    ],
+                    [
+                        8.4385876,
+                        49.0114864
+                    ],
+                    [
+                        8.4385756,
+                        49.0115616
+                    ],
+                    [
+                        8.438588,
+                        49.0116053
+                    ],
+                    [
+                        8.4386265,
+                        49.0116698
+                    ],
+                    [
+                        8.4386815,
+                        49.0117001
+                    ],
+                    [
+                        8.4388002,
+                        49.011727
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335504",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391134,
+                        49.0117863
+                    ],
+                    [
+                        8.4392488,
+                        49.0118347
+                    ],
+                    [
+                        8.4393481,
+                        49.011873
+                    ],
+                    [
+                        8.4394466,
+                        49.0119319
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335505",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4394057,
+                        49.0119561
+                    ],
+                    [
+                        8.4393105,
+                        49.0118998
+                    ],
+                    [
+                        8.4390892,
+                        49.0118035
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335506",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387694,
+                        49.0117487
+                    ],
+                    [
+                        8.4386621,
+                        49.011738
+                    ],
+                    [
+                        8.4386151,
+                        49.0117446
+                    ],
+                    [
+                        8.4385935,
+                        49.011777
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335507",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385935,
+                        49.011777
+                    ],
+                    [
+                        8.4384178,
+                        49.0120475
+                    ],
+                    [
+                        8.4383582,
+                        49.0121557
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335508",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383166,
+                        49.0121425
+                    ],
+                    [
+                        8.4383769,
+                        49.012025
+                    ],
+                    [
+                        8.438446,
+                        49.0119142
+                    ],
+                    [
+                        8.4385452,
+                        49.0117673
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335509",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385452,
+                        49.0117673
+                    ],
+                    [
+                        8.4385662,
+                        49.0117305
+                    ],
+                    [
+                        8.4386306,
+                        49.0117098
+                    ],
+                    [
+                        8.4386842,
+                        49.0117085
+                    ],
+                    [
+                        8.4388002,
+                        49.011727
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335510",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438267,
+                        49.0121328
+                    ],
+                    [
+                        8.4383635,
+                        49.0119652
+                    ],
+                    [
+                        8.4384991,
+                        49.0117596
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335511",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384991,
+                        49.0117596
+                    ],
+                    [
+                        8.4385818,
+                        49.0116399
+                    ],
+                    [
+                        8.4386468,
+                        49.0115703
+                    ],
+                    [
+                        8.4387164,
+                        49.0114889
+                    ],
+                    [
+                        8.4387729,
+                        49.0114274
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335512",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387729,
+                        49.0114274
+                    ],
+                    [
+                        8.4389383,
+                        49.0112636
+                    ],
+                    [
+                        8.43899,
+                        49.0112084
+                    ],
+                    [
+                        8.4392039,
+                        49.0110285
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335513",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385452,
+                        49.0117673
+                    ],
+                    [
+                        8.4386523,
+                        49.0116222
+                    ],
+                    [
+                        8.4387603,
+                        49.0114973
+                    ],
+                    [
+                        8.438825,
+                        49.0114334
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335514",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438825,
+                        49.0114334
+                    ],
+                    [
+                        8.4389796,
+                        49.0112801
+                    ],
+                    [
+                        8.4390537,
+                        49.0112104
+                    ],
+                    [
+                        8.4391207,
+                        49.0111523
+                    ],
+                    [
+                        8.4392441,
+                        49.0110547
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335515",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385935,
+                        49.011777
+                    ],
+                    [
+                        8.4386537,
+                        49.011695
+                    ],
+                    [
+                        8.438714,
+                        49.0116206
+                    ],
+                    [
+                        8.4388046,
+                        49.0115131
+                    ],
+                    [
+                        8.4388683,
+                        49.0114446
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335516",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388683,
+                        49.0114446
+                    ],
+                    [
+                        8.4389558,
+                        49.0113648
+                    ],
+                    [
+                        8.4390865,
+                        49.0112359
+                    ],
+                    [
+                        8.4392736,
+                        49.0110824
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335517",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388683,
+                        49.0114446
+                    ],
+                    [
+                        8.4388445,
+                        49.0114741
+                    ],
+                    [
+                        8.4388482,
+                        49.0115145
+                    ],
+                    [
+                        8.4388629,
+                        49.0115418
+                    ],
+                    [
+                        8.4388954,
+                        49.0115605
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335518",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438825,
+                        49.0114334
+                    ],
+                    [
+                        8.4387841,
+                        49.0114767
+                    ],
+                    [
+                        8.4387808,
+                        49.0115097
+                    ],
+                    [
+                        8.4387881,
+                        49.011537
+                    ],
+                    [
+                        8.4388629,
+                        49.0115963
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335519",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391543,
+                        49.0110221
+                    ],
+                    [
+                        8.4390128,
+                        49.0111374
+                    ],
+                    [
+                        8.4388921,
+                        49.0112491
+                    ],
+                    [
+                        8.4387747,
+                        49.0113696
+                    ],
+                    [
+                        8.4387271,
+                        49.0114193
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335520",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387271,
+                        49.0114193
+                    ],
+                    [
+                        8.4386949,
+                        49.0114514
+                    ],
+                    [
+                        8.4386467,
+                        49.0114917
+                    ],
+                    [
+                        8.4385843,
+                        49.011542
+                    ],
+                    [
+                        8.4385303,
+                        49.0115757
+                    ],
+                    [
+                        8.4384863,
+                        49.0115966
+                    ],
+                    [
+                        8.4384415,
+                        49.0116168
+                    ],
+                    [
+                        8.4383804,
+                        49.011628
+                    ],
+                    [
+                        8.4382269,
+                        49.0116095
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335521",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382034,
+                        49.0116452
+                    ],
+                    [
+                        8.438361,
+                        49.0116627
+                    ],
+                    [
+                        8.4384264,
+                        49.011659
+                    ],
+                    [
+                        8.4384995,
+                        49.011637
+                    ],
+                    [
+                        8.4385628,
+                        49.0116104
+                    ],
+                    [
+                        8.4386091,
+                        49.0115752
+                    ],
+                    [
+                        8.4386841,
+                        49.0115059
+                    ],
+                    [
+                        8.4387729,
+                        49.0114274
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335522",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383583,
+                        49.0115183
+                    ],
+                    [
+                        8.438426,
+                        49.0115229
+                    ],
+                    [
+                        8.4384609,
+                        49.0115326
+                    ],
+                    [
+                        8.4384953,
+                        49.0115595
+                    ],
+                    [
+                        8.4385355,
+                        49.0116154
+                    ],
+                    [
+                        8.4385397,
+                        49.0116421
+                    ],
+                    [
+                        8.4385345,
+                        49.0116769
+                    ],
+                    [
+                        8.4385226,
+                        49.0117096
+                    ],
+                    [
+                        8.4384991,
+                        49.0117596
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335523",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383969,
+                        49.0114934
+                    ],
+                    [
+                        8.438447,
+                        49.0114979
+                    ],
+                    [
+                        8.4385074,
+                        49.0115174
+                    ],
+                    [
+                        8.4385493,
+                        49.0115518
+                    ],
+                    [
+                        8.4385773,
+                        49.0115879
+                    ],
+                    [
+                        8.4385893,
+                        49.0116178
+                    ],
+                    [
+                        8.438595,
+                        49.0116645
+                    ],
+                    [
+                        8.4385759,
+                        49.0117074
+                    ],
+                    [
+                        8.4385452,
+                        49.0117673
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335524",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388629,
+                        49.0115963
+                    ],
+                    [
+                        8.4387845,
+                        49.0115803
+                    ],
+                    [
+                        8.4387462,
+                        49.0115837
+                    ],
+                    [
+                        8.4387149,
+                        49.0115879
+                    ],
+                    [
+                        8.4386674,
+                        49.0116002
+                    ],
+                    [
+                        8.4386171,
+                        49.0116225
+                    ],
+                    [
+                        8.4385653,
+                        49.0116563
+                    ],
+                    [
+                        8.4385327,
+                        49.0116825
+                    ],
+                    [
+                        8.4384797,
+                        49.0117525
+                    ],
+                    [
+                        8.4384574,
+                        49.0117825
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335525",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384574,
+                        49.0117825
+                    ],
+                    [
+                        8.4383135,
+                        49.0120107
+                    ],
+                    [
+                        8.4382376,
+                        49.0121375
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335526",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4381959,
+                        49.0121258
+                    ],
+                    [
+                        8.4382623,
+                        49.012007
+                    ],
+                    [
+                        8.4383313,
+                        49.0119001
+                    ],
+                    [
+                        8.4383997,
+                        49.0117959
+                    ],
+                    [
+                        8.4384135,
+                        49.0117772
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335527",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384135,
+                        49.0117772
+                    ],
+                    [
+                        8.4384613,
+                        49.0117105
+                    ],
+                    [
+                        8.4384901,
+                        49.0116697
+                    ],
+                    [
+                        8.4385206,
+                        49.0116354
+                    ],
+                    [
+                        8.4385627,
+                        49.0116068
+                    ],
+                    [
+                        8.4386145,
+                        49.0115786
+                    ],
+                    [
+                        8.438681,
+                        49.011557
+                    ],
+                    [
+                        8.43874,
+                        49.0115485
+                    ],
+                    [
+                        8.4388021,
+                        49.0115469
+                    ],
+                    [
+                        8.4388954,
+                        49.0115605
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-335528",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384135,
+                        49.0117772
+                    ],
+                    [
+                        8.4385662,
+                        49.0115576
+                    ],
+                    [
+                        8.4386084,
+                        49.0115042
+                    ],
+                    [
+                        8.4386775,
+                        49.0114439
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-354883",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4395096,
+                        49.0121261
+                    ],
+                    [
+                        8.4394298,
+                        49.012099
+                    ],
+                    [
+                        8.4392374,
+                        49.0120263
+                    ],
+                    [
+                        8.4390439,
+                        49.0119528
+                    ],
+                    [
+                        8.4389377,
+                        49.0119205
+                    ],
+                    [
+                        8.4387854,
+                        49.011856
+                    ],
+                    [
+                        8.4387043,
+                        49.0118167
+                    ],
+                    [
+                        8.4386751,
+                        49.0118015
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-354892",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387368,
+                        49.0117826
+                    ],
+                    [
+                        8.4387486,
+                        49.0117975
+                    ],
+                    [
+                        8.438874,
+                        49.0118554
+                    ],
+                    [
+                        8.4389561,
+                        49.0118834
+                    ],
+                    [
+                        8.4392931,
+                        49.0119994
+                    ],
+                    [
+                        8.4394473,
+                        49.0120588
+                    ],
+                    [
+                        8.4395479,
+                        49.0120935
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355005",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389259,
+                        49.0118028
+                    ],
+                    [
+                        8.4387563,
+                        49.0117597
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355062",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382078,
+                        49.0116351
+                    ],
+                    [
+                        8.4381522,
+                        49.0116259
+                    ],
+                    [
+                        8.4380807,
+                        49.0116163
+                    ],
+                    [
+                        8.4380582,
+                        49.0116133
+                    ],
+                    [
+                        8.4380032,
+                        49.0116088
+                    ],
+                    [
+                        8.437932,
+                        49.0116048
+                    ],
+                    [
+                        8.4378592,
+                        49.011602
+                    ],
+                    [
+                        8.4378094,
+                        49.0115995
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355073",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382034,
+                        49.0116452
+                    ],
+                    [
+                        8.4380277,
+                        49.0116223
+                    ],
+                    [
+                        8.4378078,
+                        49.0116141
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355203",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438416,
+                        49.0114498
+                    ],
+                    [
+                        8.4383362,
+                        49.0114475
+                    ],
+                    [
+                        8.4382958,
+                        49.0114492
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355210",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"solid\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383043,
+                        49.0114615
+                    ],
+                    [
+                        8.4384063,
+                        49.0114657
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355248",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389343,
+                        49.011531
+                    ],
+                    [
+                        8.4390067,
+                        49.011531
+                    ],
+                    [
+                        8.4390724,
+                        49.0115636
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355253",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389313,
+                        49.0114906
+                    ],
+                    [
+                        8.438995,
+                        49.0114844
+                    ],
+                    [
+                        8.4390785,
+                        49.0115134
+                    ],
+                    [
+                        8.4391154,
+                        49.0115444
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355340",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4393112,
+                        49.01114
+                    ],
+                    [
+                        8.4392267,
+                        49.0112126
+                    ],
+                    [
+                        8.4391268,
+                        49.0112997
+                    ],
+                    [
+                        8.4390557,
+                        49.0114061
+                    ],
+                    [
+                        8.4390067,
+                        49.0114562
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355349",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391013,
+                        49.0114708
+                    ],
+                    [
+                        8.4391201,
+                        49.0114129
+                    ],
+                    [
+                        8.4391269,
+                        49.0113651
+                    ],
+                    [
+                        8.439163,
+                        49.0113217
+                    ],
+                    [
+                        8.4392263,
+                        49.011268
+                    ],
+                    [
+                        8.43934,
+                        49.0111704
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355375",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4390067,
+                        49.0114562
+                    ],
+                    [
+                        8.4389953,
+                        49.0114721
+                    ],
+                    [
+                        8.4389752,
+                        49.0114831
+                    ],
+                    [
+                        8.4389313,
+                        49.0114906
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355386",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391013,
+                        49.0114708
+                    ],
+                    [
+                        8.4390621,
+                        49.0114943
+                    ],
+                    [
+                        8.4389947,
+                        49.0115145
+                    ],
+                    [
+                        8.4389343,
+                        49.011531
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355397",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4390067,
+                        49.0114562
+                    ],
+                    [
+                        8.4390265,
+                        49.0115189
+                    ],
+                    [
+                        8.4390724,
+                        49.0115636
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355398",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4391013,
+                        49.0114708
+                    ],
+                    [
+                        8.4391013,
+                        49.011507
+                    ],
+                    [
+                        8.4391154,
+                        49.0115444
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355423",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4390724,
+                        49.0115636
+                    ],
+                    [
+                        8.4391278,
+                        49.0116042
+                    ],
+                    [
+                        8.4392173,
+                        49.0116368
+                    ],
+                    [
+                        8.4393108,
+                        49.0116663
+                    ],
+                    [
+                        8.4394466,
+                        49.0117188
+                    ],
+                    [
+                        8.4395257,
+                        49.0117529
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355434",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4395562,
+                        49.011734
+                    ],
+                    [
+                        8.4394392,
+                        49.0116852
+                    ],
+                    [
+                        8.4393273,
+                        49.011643
+                    ],
+                    [
+                        8.4392243,
+                        49.0116075
+                    ],
+                    [
+                        8.4391771,
+                        49.0115878
+                    ],
+                    [
+                        8.4391372,
+                        49.0115609
+                    ],
+                    [
+                        8.4391154,
+                        49.0115444
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355453",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386788,
+                        49.0117489
+                    ],
+                    [
+                        8.4386751,
+                        49.0118015
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355455",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387363,
+                        49.0117629
+                    ],
+                    [
+                        8.4387368,
+                        49.0117826
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355462",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386031,
+                        49.0117761
+                    ],
+                    [
+                        8.4386751,
+                        49.0118015
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355464",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4386441,
+                        49.0117469
+                    ],
+                    [
+                        8.4387368,
+                        49.0117826
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355488",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382155,
+                        49.0117432
+                    ],
+                    [
+                        8.438136,
+                        49.011767
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355491",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4381786,
+                        49.0117087
+                    ],
+                    [
+                        8.4380961,
+                        49.0117344
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355506",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379607,
+                        49.0120733
+                    ],
+                    [
+                        8.4379955,
+                        49.0119647
+                    ],
+                    [
+                        8.438021,
+                        49.0118838
+                    ],
+                    [
+                        8.4380398,
+                        49.0117901
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355516",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4380931,
+                        49.0118011
+                    ],
+                    [
+                        8.438136,
+                        49.011767
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355530",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4380961,
+                        49.0117344
+                    ],
+                    [
+                        8.4380398,
+                        49.0117901
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355545",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379788,
+                        49.0117505
+                    ],
+                    [
+                        8.4378205,
+                        49.0117377
+                    ],
+                    [
+                        8.4374678,
+                        49.0117184
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355550",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4374759,
+                        49.011688
+                    ],
+                    [
+                        8.4376971,
+                        49.0117025
+                    ],
+                    [
+                        8.4379124,
+                        49.0117197
+                    ],
+                    [
+                        8.4379861,
+                        49.011725
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355569",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379788,
+                        49.0117505
+                    ],
+                    [
+                        8.4380193,
+                        49.0117683
+                    ],
+                    [
+                        8.4380398,
+                        49.0117901
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355572",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379861,
+                        49.011725
+                    ],
+                    [
+                        8.4380428,
+                        49.0117439
+                    ],
+                    [
+                        8.438082,
+                        49.0117723
+                    ],
+                    [
+                        8.4380931,
+                        49.0118011
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355582",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4380961,
+                        49.0117344
+                    ],
+                    [
+                        8.4380602,
+                        49.0117327
+                    ],
+                    [
+                        8.4379861,
+                        49.011725
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355585",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379788,
+                        49.0117505
+                    ],
+                    [
+                        8.4380696,
+                        49.0117692
+                    ],
+                    [
+                        8.438136,
+                        49.011767
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355633",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387425,
+                        49.0116707
+                    ],
+                    [
+                        8.4388032,
+                        49.0115944
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355636",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388549,
+                        49.011608
+                    ],
+                    [
+                        8.4387942,
+                        49.0116832
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355646",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387363,
+                        49.0117629
+                    ],
+                    [
+                        8.4387942,
+                        49.0116832
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355647",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387425,
+                        49.0116707
+                    ],
+                    [
+                        8.4386788,
+                        49.0117489
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355687",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389343,
+                        49.011531
+                    ],
+                    [
+                        8.4388974,
+                        49.0115508
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355689",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389313,
+                        49.0114906
+                    ],
+                    [
+                        8.4388673,
+                        49.0115301
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355691",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4389343,
+                        49.011531
+                    ],
+                    [
+                        8.4388575,
+                        49.0115167
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355693",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388538,
+                        49.0114796
+                    ],
+                    [
+                        8.4389313,
+                        49.0114906
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355731",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388974,
+                        49.0115508
+                    ],
+                    [
+                        8.4388549,
+                        49.011608
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355732",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4388673,
+                        49.0115301
+                    ],
+                    [
+                        8.4388032,
+                        49.0115944
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355760",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385142,
+                        49.0114074
+                    ],
+                    [
+                        8.4385192,
+                        49.0114158
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355763",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384349,
+                        49.0114299
+                    ],
+                    [
+                        8.4384391,
+                        49.0114366
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355789",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4379023,
+                        49.0114109
+                    ],
+                    [
+                        8.4381913,
+                        49.0114219
+                    ],
+                    [
+                        8.4382879,
+                        49.0114224
+                    ],
+                    [
+                        8.4383645,
+                        49.0114238
+                    ],
+                    [
+                        8.4383902,
+                        49.0114252
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355796",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383767,
+                        49.011378
+                    ],
+                    [
+                        8.4383141,
+                        49.0113837
+                    ],
+                    [
+                        8.4382161,
+                        49.0113973
+                    ],
+                    [
+                        8.4380663,
+                        49.0113969
+                    ],
+                    [
+                        8.4378943,
+                        49.0113898
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355808",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438544,
+                        49.0113714
+                    ],
+                    [
+                        8.4385809,
+                        49.0113371
+                    ],
+                    [
+                        8.4386507,
+                        49.0112984
+                    ],
+                    [
+                        8.4386949,
+                        49.0112658
+                    ],
+                    [
+                        8.4388364,
+                        49.0111365
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355817",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4387888,
+                        49.0111158
+                    ],
+                    [
+                        8.4386674,
+                        49.0112346
+                    ],
+                    [
+                        8.4386091,
+                        49.0112764
+                    ],
+                    [
+                        8.4385481,
+                        49.011301
+                    ],
+                    [
+                        8.4384891,
+                        49.011345
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355859",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384891,
+                        49.011345
+                    ],
+                    [
+                        8.4383767,
+                        49.011378
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355860",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438544,
+                        49.0113714
+                    ],
+                    [
+                        8.4383902,
+                        49.0114252
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355870",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438544,
+                        49.0113714
+                    ],
+                    [
+                        8.4385253,
+                        49.0113839
+                    ],
+                    [
+                        8.4385135,
+                        49.0113982
+                    ],
+                    [
+                        8.4385142,
+                        49.0114074
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355874",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384891,
+                        49.011345
+                    ],
+                    [
+                        8.4384448,
+                        49.0113751
+                    ],
+                    [
+                        8.4384337,
+                        49.0113989
+                    ],
+                    [
+                        8.4384349,
+                        49.0114299
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355955",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383902,
+                        49.0114252
+                    ],
+                    [
+                        8.4384349,
+                        49.0114299
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-355956",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383767,
+                        49.011378
+                    ],
+                    [
+                        8.4384311,
+                        49.0113828
+                    ],
+                    [
+                        8.4385142,
+                        49.0114074
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356142",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384391,
+                        49.0114366
+                    ],
+                    [
+                        8.438447,
+                        49.0114472
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356144",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385192,
+                        49.0114158
+                    ],
+                    [
+                        8.4385122,
+                        49.0114338
+                    ],
+                    [
+                        8.438506,
+                        49.0114546
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356146",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"virtual\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384391,
+                        49.0114366
+                    ],
+                    [
+                        8.4384532,
+                        49.0114426
+                    ],
+                    [
+                        8.4385273,
+                        49.0114581
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356148",
+                "z_order": 0,
+                "other_tags": "\"type\"=>\"road_border\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385192,
+                        49.0114158
+                    ],
+                    [
+                        8.4385363,
+                        49.0114248
+                    ],
+                    [
+                        8.4385665,
+                        49.0114285
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356300",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385273,
+                        49.0114581
+                    ],
+                    [
+                        8.4388575,
+                        49.0115167
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356301",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4385665,
+                        49.0114285
+                    ],
+                    [
+                        8.4388538,
+                        49.0114796
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356316",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438506,
+                        49.0114546
+                    ],
+                    [
+                        8.4384341,
+                        49.0115411
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356318",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438447,
+                        49.0114472
+                    ],
+                    [
+                        8.4383865,
+                        49.0115341
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356380",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383865,
+                        49.0115341
+                    ],
+                    [
+                        8.4383241,
+                        49.0116097
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356382",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4384341,
+                        49.0115411
+                    ],
+                    [
+                        8.4383751,
+                        49.0116146
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356407",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4382604,
+                        49.0116731
+                    ],
+                    [
+                        8.4383241,
+                        49.0116097
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356408",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383751,
+                        49.0116146
+                    ],
+                    [
+                        8.4382919,
+                        49.0116955
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356435",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.4383114,
+                        49.011734
+                    ],
+                    [
+                        8.4386031,
+                        49.0117761
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "osm_id": "-356437",
+                "z_order": 0,
+                "other_tags": "\"subtype\"=>\"dashed\",\"type\"=>\"line_thin\""
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        8.438298,
+                        49.0117006
+                    ],
+                    [
+                        8.4386441,
+                        49.0117469
+                    ]
+                ]
+            }
+        }
+    ]
+}

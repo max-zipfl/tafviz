@@ -35,6 +35,9 @@ Alternatively, you can use this **[web UI](https://gdal3.js.org/)** to perform t
 <summary>gdal3.js Options</summary>
 <img src="assets/screenshot_ogr2ogr.png" height="500px">
 </details>
+<br>
+
+Pre-converted versions of the official maps are to be found at [`data/`](data).
 
 ## Details
 For proper visualization, metric coordinates (no lat / lon) are used internally. Thus, input lat / lon coordinates (by default, WGS84 is assumed) are automatically converted to web mercator projection.
@@ -54,4 +57,4 @@ For proper visualization, metric coordinates (no lat / lon) are used internally.
 This project is not affiliated with FZI Forschungszentrum Informatik Karlsruhe.
 
 ## License 
-GPL-3.0
+This repository contains a modified subset of data originally created by FZI Forschungszentrum Informatik, used under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (**CC BY-NC-SA 4.0**).
