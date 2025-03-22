@@ -37,6 +37,8 @@ Alternatively, you can use this **[web UI](https://gdal3.js.org/)** to perform t
 </details>
 <br>
 
+If you end up with an empty file, use [JOSM](https://josm.openstreetmap.de/wiki/Download) instead (_File_ -> _Save As..._).
+
 Pre-converted versions of the official maps are to be found at [`data/`](data).
 
 ## Details
