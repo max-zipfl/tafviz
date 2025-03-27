@@ -1,5 +1,5 @@
 import { Visualizer } from "./visualization.js"
-import { DragHandler, getMinMax2D, sleep } from "./utils.js"
+import { DragHandler, getMinMax2D, guessUTMZone, guessUTMProj4, sleep } from "./utils.js"
 import { crs, props } from "./config.js"
 
 // HTML references
@@ -13,6 +13,8 @@ const speedLabelEl = document.getElementById('speed-label')
 const frameCountEl = document.getElementById('frame-count')
 const showOrientationCb = document.getElementById('orientation-checkbox')
 const showLabelsCb = document.getElementById('labels-checkbox')
+const localMapCb = document.getElementById('local-map-checkbox')
+const flippedYMapCb = document.getElementById('flipped-yaxis-checkbox')
 const collapseBtn = document.getElementById('collapse-control')
 const controlsContent = document.getElementById('controls-content')
 const canvas = document.getElementById('stream')
@@ -24,6 +26,7 @@ let running = false
 let loaded = false
 let showOrientation = true
 let showLabels = true
+let isMapLocal = false
 
 // Data handling
 
@@ -78,7 +81,7 @@ async function readGeoJSON() {
         reader.onload = (e) => {
             let data = JSON.parse(e.target.result)
             data = data.features.map(f => f.geometry.coordinates)  // lines
-            data = data.map(l => reproject(l, crs, 'EPSG:3857'))
+            if (!isMapLocal) data = data.map(l => reproject(l, crs, 'utm'))
             resolve(data)
         }
         reader.readAsText(input)
@@ -96,7 +99,8 @@ function filterCase(data, caseId = 0) {
  * @param {string} crsDst Target CRS
  * @returns Projected coordinates
  */
-function reproject(coords, crsSrc = 'EPSG:4326', crsDst = 'EPSG:3857') {
+function reproject(coords, crsSrc = 'EPSG:4326', crsDst = 'UTM') {
+    if (coords.length && crsDst.toLowerCase() === 'utm') crsDst = guessUTMProj4(coords[0][1], coords[0][0])  // assuming all coords are in same zone
     return coords.map(c => proj4(crsSrc, crsDst, c))
 }
 
@@ -220,6 +224,16 @@ function setShowLabels(e) {
     showLabelsCb.checked = showLabels
 }
 
+function setMapIsLocal(e) {
+    isMapLocal = (typeof e === 'boolean') ? e : e.target.checked
+    localMapCb.checked = isMapLocal
+}
+
+function setYFlipped(e) {
+    viz.flipY = (typeof e === 'boolean') ? e : e.target.checked
+    flippedYMapCb.checked = viz.flipY
+}
+
 function toggle() {
     if (!loaded) return
     paused = !paused
@@ -257,4 +271,6 @@ window.taf = {
     collapseControls,
     setShowOrientation,
     setShowLabels,
+    setMapIsLocal,
+    setYFlipped,
 }

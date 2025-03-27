@@ -157,13 +157,19 @@
           </div>
 
           <div class="input-group">
-            <label>Show:</label>
+            <label>Settings:</label>
             <div class="sub-input-group">
               <input type="checkbox" id="orientation-checkbox" onchange="taf.setShowOrientation(event)" style="margin-left: 8px;" checked>
               <label for="orientation-checkbox">Orientation</label>
 
               <input type="checkbox" id="labels-checkbox" onchange="taf.setShowLabels(event)" style="margin-left: 8px;" checked>
               <label for="labels-checkbox">Labels</label>
+
+              <input type="checkbox" id="local-map-checkbox" onchange="taf.setMapIsLocal(event)" style="margin-left: 8px;">
+              <label for="local-map-checkbox">Local Map</label>
+
+              <input type="checkbox" id="flipped-yaxis-checkbox" onchange="taf.setYFlipped(event)" style="margin-left: 8px;">
+              <label for="flipped-yaxis-checkbox">Flip Y</label>
             </div>
           </div>
 

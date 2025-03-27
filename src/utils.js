@@ -1,3 +1,11 @@
+export function guessUTMZone(lat, lon) {
+    return parseInt(((lon+180)/6)%60)+1
+}
+
+export function guessUTMProj4(lat, lon) {
+    return `+proj=utm +zone=${guessUTMZone(lat, lon)} +datum=WGS84 +units=m +no_defs`
+}
+
 export function getMinMax2D(data, keyX = 'x', keyY = 'y') {
     const minX = Math.min(...data.map(p => p[keyX]))
     const maxX = Math.max(...data.map(p => p[keyX]))
@@ -8,7 +16,7 @@ export function getMinMax2D(data, keyX = 'x', keyY = 'y') {
 }
 
 export function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 export class DragHandler {

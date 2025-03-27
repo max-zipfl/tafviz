@@ -18,6 +18,7 @@ export class Visualizer {
         this.h = canvas.height
         this.zoom = 1.0
         this.offset = [0, 0]
+        this.flipY = false
 
         this.min = [0, 0]
         this.max = [this.w, this.h]
@@ -223,7 +224,7 @@ export class Visualizer {
             ((pp[0] - this.min[0]) / (this.max[0] - this.min[0])) * (this.w - 0) + 0,
             ((pp[1] - this.min[1]) / (this.max[1] - this.min[1])) * (this.h - 0) + 0,
         ]
-        pp[1] = this.h - pp[1]  // flip y axis
+        if (this.flipY) pp[1] = this.h - pp[1]  // flip y axis
         return pp
     }
 
@@ -232,12 +233,12 @@ export class Visualizer {
      * @param {array} p Point (x, y)
      * @param {number} r Rotation angle (radians)
      * @param {array} centroid Rotation center (x, y)
-     * @retuens Rotated coordinates
+     * @returns Rotated coordinates
      */
     #rotate(p, r, centroid) {
         let pp = [...p]
 
-        r += Math.PI  // flip y axis
+        if (this.flipY) r += Math.PI  // flip y axis
 
         // Translate to origin
         pp[0] -= centroid[0]
