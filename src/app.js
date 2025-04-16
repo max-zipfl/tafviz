@@ -14,7 +14,6 @@ const frameCountEl = document.getElementById('frame-count')
 const showOrientationCb = document.getElementById('orientation-checkbox')
 const showLabelsCb = document.getElementById('labels-checkbox')
 const localMapCb = document.getElementById('local-map-checkbox')
-const flippedYMapCb = document.getElementById('flipped-yaxis-checkbox')
 const collapseBtn = document.getElementById('collapse-control')
 const controlsContent = document.getElementById('controls-content')
 const canvas = document.getElementById('stream')
@@ -229,11 +228,6 @@ function setMapIsLocal(e) {
     localMapCb.checked = isMapLocal
 }
 
-function setYFlipped(e) {
-    viz.flipY = (typeof e === 'boolean') ? e : e.target.checked
-    flippedYMapCb.checked = viz.flipY
-}
-
 function toggle() {
     if (!loaded) return
     paused = !paused
@@ -272,5 +266,4 @@ window.taf = {
     setShowOrientation,
     setShowLabels,
     setMapIsLocal,
-    setYFlipped,
 }
