@@ -4,7 +4,7 @@ Extremely simple and lean 2D visualization of traffic scenarios in 350 lines of 
 
 **Demo available [here](https://apps.muetsch.io/tafviz).**
 
-<img src="assets/screenshot_2.png">
+[Recording 2025-04-17 at 11.04.46.webm](https://github.com/user-attachments/assets/e8574a93-f181-4aa7-8618-3f1d028d837c)
 
 ## Usage
 ```bash
