@@ -11,13 +11,14 @@ const caseIdInputEl = document.getElementById('caseid-input')
 const speedInputEl = document.getElementById('speed-slider')
 const speedLabelEl = document.getElementById('speed-label')
 const frameCountEl = document.getElementById('frame-count')
+const frameSliderEl = document.getElementById('frame-slider')
 const showOrientationCb = document.getElementById('orientation-checkbox')
 const showLabelsCb = document.getElementById('labels-checkbox')
 const localMapCb = document.getElementById('local-map-checkbox')
 const collapseBtn = document.getElementById('collapse-control')
 const controlsContent = document.getElementById('controls-content')
+
 const canvas = document.getElementById('stream')
-const frameSliderEl = document.getElementById('frame-slider')
 
 // Global variables
 let speed = parseFloat(speedInputEl.value)
@@ -27,8 +28,7 @@ let loaded = false
 let showOrientation = true
 let showLabels = true
 let isMapLocal = false
-let currentFrameIndex = 0
-let userInteractedWithSlider = false;
+let forceFrameIdx = null
 
 // Data handling
 
@@ -177,9 +177,10 @@ async function run(e) {
     console.log('visualizing data')
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
 
-    
-    frameSliderEl.max = uniqueFrames.length - 1 // Set the slider's maximum value
-    frameSliderEl.value = 0 // Reset the slider to the first frame
+    // init slider 
+    frameSliderEl.max = uniqueFrames.length - 1
+    frameSliderEl.value = 0
+    frameSliderEl.style.visibility = 'visible'
 
     running = true
     loaded = true
@@ -190,13 +191,14 @@ async function run(e) {
         if (paused) {
             // poor-man's pause
             await sleep(100)
-            i--
-            continue
-        }
 
-        if (userInteractedWithSlider) {
-            i = currentFrameIndex; // Update the loop counter to match the slider value
-            userInteractedWithSlider = false; // Reset the flag
+            if (forceFrameIdx !== null) {
+                i = forceFrameIdx
+                forceFrameIdx = null
+            } else {
+                i--
+                continue
+            }
         }
 
         const frameId = uniqueFrames[i]
@@ -206,8 +208,9 @@ async function run(e) {
 
         viz.drawFrame(dataGrouped[frameId], showOrientation, showLabels)
         if (map) viz.drawMap(map)
+
         frameCountEl.innerText = `t=${frameId} (${Math.round((i / uniqueFrames.length) * 100)} %)`
-        frameSliderEl.value = i // Update the slider's value to match the current frame
+        frameSliderEl.value = i
 
         if (nextFrameId) {
             const t0 = dataGrouped[frameId][0][props.ts]
@@ -244,6 +247,7 @@ function setMapIsLocal(e) {
 function toggle() {
     if (!loaded) return
     paused = !paused
+    forceFrameIdx = forceFrameIdx ? paused : null
 }
 
 function setLoadingIndicator(loading) {
@@ -257,9 +261,8 @@ function collapseControls() {
 }
 
 function setFrameFromSlider(e) {
-    currentFrameIndex = parseInt(e.target.value)
-    userInteractedWithSlider = true; 
-    paused = false; 
+    forceFrameIdx = parseInt(e.target.value)
+    paused = true
 }
 
 // Listeners
@@ -268,7 +271,6 @@ canvas.addEventListener('wheel', (e) => viz.adjustZoom(e.deltaY))
 canvas.addEventListener('mousedown', (e) => dragHandler.onStart(e))
 canvas.addEventListener('mousemove', (e) => dragHandler.onDrag(e))
 canvas.addEventListener('mouseup', (e) => dragHandler.onStop(e))
-frameSliderEl.addEventListener('input', setFrameFromSlider)
 
 // Initial stuff
 
@@ -286,4 +288,5 @@ window.taf = {
     setShowOrientation,
     setShowLabels,
     setMapIsLocal,
+    setFrameFromSlider,
 }
