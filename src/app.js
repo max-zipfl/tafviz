@@ -17,6 +17,7 @@ const localMapCb = document.getElementById('local-map-checkbox')
 const collapseBtn = document.getElementById('collapse-control')
 const controlsContent = document.getElementById('controls-content')
 const canvas = document.getElementById('stream')
+const frameSliderEl = document.getElementById('frame-slider')
 
 // Global variables
 let speed = parseFloat(speedInputEl.value)
@@ -26,6 +27,8 @@ let loaded = false
 let showOrientation = true
 let showLabels = true
 let isMapLocal = false
+let currentFrameIndex = 0
+let userInteractedWithSlider = false;
 
 // Data handling
 
@@ -174,6 +177,10 @@ async function run(e) {
     console.log('visualizing data')
     const uniqueFrames = Object.keys(dataGrouped).toSorted((a, b) => parseInt(a) - parseInt(b))
 
+    
+    frameSliderEl.max = uniqueFrames.length - 1 // Set the slider's maximum value
+    frameSliderEl.value = 0 // Reset the slider to the first frame
+
     running = true
     loaded = true
     setLoadingIndicator(false)
@@ -187,6 +194,11 @@ async function run(e) {
             continue
         }
 
+        if (userInteractedWithSlider) {
+            i = currentFrameIndex; // Update the loop counter to match the slider value
+            userInteractedWithSlider = false; // Reset the flag
+        }
+
         const frameId = uniqueFrames[i]
         const nextFrameId = i < uniqueFrames.length - 1 ? uniqueFrames[i + 1] : null
 
@@ -195,6 +207,7 @@ async function run(e) {
         viz.drawFrame(dataGrouped[frameId], showOrientation, showLabels)
         if (map) viz.drawMap(map)
         frameCountEl.innerText = `t=${frameId} (${Math.round((i / uniqueFrames.length) * 100)} %)`
+        frameSliderEl.value = i // Update the slider's value to match the current frame
 
         if (nextFrameId) {
             const t0 = dataGrouped[frameId][0][props.ts]
@@ -243,12 +256,19 @@ function collapseControls() {
     collapseBtn.innerHTML = isCollapsed ? '&#11205;' : '&#11206;'
 }
 
+function setFrameFromSlider(e) {
+    currentFrameIndex = parseInt(e.target.value)
+    userInteractedWithSlider = true; 
+    paused = false; 
+}
+
 // Listeners
 
 canvas.addEventListener('wheel', (e) => viz.adjustZoom(e.deltaY))
 canvas.addEventListener('mousedown', (e) => dragHandler.onStart(e))
 canvas.addEventListener('mousemove', (e) => dragHandler.onDrag(e))
 canvas.addEventListener('mouseup', (e) => dragHandler.onStop(e))
+frameSliderEl.addEventListener('input', setFrameFromSlider)
 
 // Initial stuff
 
